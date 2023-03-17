@@ -108,10 +108,11 @@ method.
 
 The repository has been created recently and 
 there are a lot of thing to do:
-  * Improve the C code of the solutions; bugs, style, etc... 
+  * Improve solutions code; 
+    bugs, style, error handling, etc... 
   * Use 
     `Sphinx <https://www.sphinx-doc.org/en/master/>`_
-    to make the documentation 
+    to build the web and documentation 
     (work in progress).
   * Correct english grammar and/or spelling or improve the wording.
 

@@ -18,8 +18,9 @@ Compilation and run:
 
 
 Notes:
-    * In c, **main** is special, your program begins executing at the beginning of main. 
-      this mean that every program must have a **main** somewhere.
+    * In c, `main` is special, 
+      your program begins executing at the beginning of `main`. 
+      This mean that every program must have a `main` somewhere.
 
 Exercise 1-2.
 -------------
@@ -44,8 +45,10 @@ Compilation and run:
     \y -> -y- 
 
 Notes:
-    * In (page 193 K&R) it is stated that if the character following the \\ is not one of those specified,
-      the behavior is undefined. Most compiler do a warning when a escape sequence is not recognized.
+    * On page 193 K&R, it is stated that if 
+      the escape sequence is not recognized 
+      the behavior is undefined.
+      Most compiler just do a warning and ignore the \\.
 
 Exercise 1-3.
 -------------
@@ -146,7 +149,7 @@ Compilation and run:
  
 
 Notes:
-    * Hotice the equivalence between `while` and `for` 
+    * Notice the equivalence between `while` and `for` 
       iteration statements:
       
       .. code-block:: c
@@ -165,3 +168,98 @@ Notes:
             expr_3;
         }
 
+
+Exercise 1-6.
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_06/main.c
+    :language: c
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    hello there
+    111111111111
+
+Notes:
+    * Any assignment in C evaluates to 
+      the value of the left hand side after after the assignment. 
+      For example the expression 
+      
+      .. code-block:: c
+
+        c = getchar() 
+        
+      evaluates to the return value of `getchar()`.
+      And since the evaluation is done right to left
+      this make this kind of expressions possible:
+
+      .. code-block:: c
+
+        a = c = getchar();
+
+    * This is the first time we are exposed to error handling in C. 
+      Usually functions return a special value when an error occur,
+      for example `getchar()` return `EOF`.
+      If we want to make a function call such as:
+
+      .. code-block:: c
+
+        c = getchar() 
+    
+      the idiom to make the error handling is:
+
+      .. code-block:: c
+
+        if ((c = getchar()) != EOF){
+            /* error handling */
+        }
+      
+    * Because of 
+      `operator precedence <https://en.cppreference.com/w/c/language/operator_precedence>`_,
+      the parentheses around the assignment in the previous code
+      are necessary, always use them. Without them:
+
+      .. code-block:: c
+
+        c = getchar() != EOF;
+    
+      is equivalent to: 
+
+      .. code-block:: c
+
+        c = (getchar() != EOF);
+      
+      (`c` is either `0` or `1`) 
+
+    .. note::
+        From this exercise onwards, 
+        all solutions must handle errors. 
+        You can use your
+        `system reference manuals <https://man7.org/linux/man-pages/man1/man.1.html>`_ 
+        to check what the functions you are using 
+        return on error.
+
+
+Exercise 1-7.
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_07/main.c
+    :language: c
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    value of EOF: -1
+
+Notes:
+    * We knew that `EOF` is an `int` because it is used as
+      the error return value of functions that return `int`.
