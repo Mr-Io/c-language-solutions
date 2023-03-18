@@ -3,6 +3,8 @@
 int main()
 {
 	int res_expr;
-	while (res_expr = getchar() != EOF)
+
+	while (res_expr = getchar() != EOF){
 		printf("%d", res_expr);
+	}
 }

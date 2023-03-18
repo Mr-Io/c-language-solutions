@@ -5,17 +5,16 @@
 
 int main()
 {
-	int blanck = OUT;
-	int c = -1;
+	int blank = OUT;
+	int c;
 
 	while ((c = getchar()) != EOF) {
 		if (c == ' ') {
-			blanck = IN;
-		}
-		else{
-			if (blanck == IN) {
+			blank = IN;
+		}else{
+			if (blank == IN) {
 				putchar(' ');
-				blanck = OUT;
+				blank = OUT;
 			}
 			putchar(c);
 		}

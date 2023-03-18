@@ -17,6 +17,4 @@ int main()
 		celsius = 5.0/9.0 * (fahr-32.0);
 		printf("%10d %8.1f\n", fahr, celsius);
 	}
-
-	return 0;
 }

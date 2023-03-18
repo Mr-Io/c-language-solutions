@@ -7,6 +7,7 @@ Exercise 1-1.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_01/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -28,6 +29,7 @@ Exercise 1-2.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_02/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -56,6 +58,7 @@ Exercise 1-3.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_03/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -88,6 +91,7 @@ Exercise 1-4.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_04/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -121,6 +125,7 @@ Exercise 1-5.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_05/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -175,6 +180,7 @@ Exercise 1-6.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_06/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -251,6 +257,7 @@ Exercise 1-7.
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_07/main.c
     :language: c
+    :tab-width: 4
 
 Compilation and run:
 
@@ -263,3 +270,57 @@ Compilation and run:
 Notes:
     * We knew that `EOF` is an `int` because it is used as
       the error return value of functions that return `int`.
+
+Exercise 1-8.
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_08/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    hello there
+    General kenobi...
+    Number of blanks, tabs and newlines: 4
+
+Exercise 1-9.
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_09/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    This     is  a line   with   a    lot of    blanks!
+    This is a line with a lot of blanks!
+
+
+Exercise 1-10.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_10/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    \Difficult      subjects cannot be described    with light prose
+    \\Difficult\tsubjects cannot be described\twith light prose
+

@@ -6,6 +6,4 @@ int main()
 	printf("\\b -> -\b- \n");
 	printf("\\a -> -\a- \n");
 	printf("\\y -> -\y- \n");
-
-	return 0;
 }

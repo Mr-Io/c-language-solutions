@@ -13,11 +13,8 @@ int main()
 
 	printf("Celsius Fahrenheit\n");
 	printf("------- ----------\n");
-	for (celsius = start; celsius <= end; celsius = celsius+step)
-	{
+	for (celsius = start; celsius <= end; celsius = celsius+step){
 		fahr = 9.0 / 5.0 * celsius + 32.0;
 		printf("%7d %10.1f\n", celsius, fahr);
 	}
-
-	return 0;
 }
