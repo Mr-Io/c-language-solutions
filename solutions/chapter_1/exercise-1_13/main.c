@@ -58,5 +58,4 @@ int main()
 		printf(" %d ", i);
 	}
 	putchar('\n');
-	return 0;
 }

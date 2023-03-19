@@ -386,6 +386,7 @@ Compilation and run:
     simple
     rules
 
+
 Exercise 1-13.
 --------------
 *main.c*
@@ -509,3 +510,53 @@ Notes:
       determines if a character is printable. 
       (page 249 K&R)
       
+
+Exercise 1-15.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_15/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    Fahrenheit  Celsius
+    ----------  -------
+             0    -17.8
+            20     -6.7
+            40      4.4
+            60     15.6
+            80     26.7
+           100     37.8
+           120     48.9
+           140     60.0
+           160     71.1
+           180     82.2
+           200     93.3
+           220    104.4
+           240    115.6
+           260    126.7
+           280    137.8
+           300    148.9
+
+Notes:
+    * We are introduced to functions definitions. If a function 
+      is overly large or complex maybe it should be splited; 
+      *a function should do just one thing and do it well*.
+    * Function parameters are local variables, if you modify them 
+      inside a function the original variable is not affected. 
+      They are just private, temporary copies. 
+
+.. note::
+
+    `main` is a function like any other, so it may return a
+    a value to its caller 
+    (the environment in which the  program was executed). 
+    From this exercise onwards,
+    we will return 0 to imply normal termination 
+    and non-zero values to signal erroneous termination.
