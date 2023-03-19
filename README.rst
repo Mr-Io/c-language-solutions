@@ -14,11 +14,11 @@ Solutions to The C Programming Language - 2nd Edition
 **This is a comprehensive solution guide for the exercises 
 of the classic book**  
 `The C Programming Language - 2nd Edition <https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628>`_,
-**usually referred to as K&R.**
+**usually referred to as K&R**.
 
-Even though the last edition of K&R (2nd edition) was published on 1988, 
+Even though the last edition of K&R (2nd edition) was published in 1988, 
 it is still condidered today, by many, 
-the very best single book on C, both for learning, and for reference. 
+the very best single book on C, both for learning, and for reference.
 
 The authors *Brian W. Kernighan* and *Dennis M. Ritchie* 
 not only presented C in an elegant and pragmatic style, but also
@@ -108,8 +108,16 @@ method.
 
 The repository has been created recently and 
 there are a lot of thing to do:
-  * Improve solutions code; 
-    bugs, style, error handling, etc... 
+  * Improve solutions code: 
+
+    * bugs
+    * style
+    * error handling
+    * integer arithmetics overflow
+    * pointer arithmetics underflow/overflow
+    * pointer rounding error
+    * etc... 
+
   * Use 
     `Sphinx <https://www.sphinx-doc.org/en/master/>`_
     to build the web and documentation 

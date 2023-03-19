@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define IN 1
-#define OUT 0
+#define IN 1	/* inside a word */
+#define OUT 0	/* outside a word */
 
 int main()
 {
@@ -17,6 +17,5 @@ int main()
 			putchar('\n');
 			state = OUT;
 		}
-
 	}
 }

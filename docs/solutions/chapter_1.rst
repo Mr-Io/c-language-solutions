@@ -250,7 +250,6 @@ Notes:
         to check what the functions you are using 
         return on error.
 
-
 Exercise 1-7.
 -------------
 *main.c*
@@ -270,6 +269,18 @@ Compilation and run:
 Notes:
     * We knew that `EOF` is an `int` because it is used as
       the error return value of functions that return `int`.
+
+    * Notice we do not check for errors with `printf`.
+      In general, it is common practice to not check for errors 
+      when the the purpose of the function is to write to stdout
+      (`putchar`, `printf`, ...)
+
+.. note::
+
+    It is reasonable to assume that writing to standard 
+    output will not fail. If it does fail, how would 
+    you tell the user, anyway?
+
 
 Exercise 1-8.
 -------------
@@ -306,7 +317,6 @@ Compilation and run:
     This     is  a line   with   a    lot of    blanks!
     This is a line with a lot of blanks!
 
-
 Exercise 1-10.
 --------------
 *main.c*
@@ -324,3 +334,54 @@ Compilation and run:
     \Difficult      subjects cannot be described    with light prose
     \\Difficult\tsubjects cannot be described\twith light prose
 
+Exercise 1-11.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_11/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    Beautiful is better than ugly.
+    Explicit is better than implicit.
+    Simple is better than complex.
+    Complex is better than complicated.
+    characters: 132
+    lines:      4
+    words:      20
+
+Notes:
+    * The kinds of input most likely to uncover bugs are those 
+      that test boundary conditions. 
+      *-to be updated with code test practices-*
+
+Exercise 1-12.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_12/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    Very complex system may arise from very simple rules
+    Very
+    complex
+    system
+    may
+    arise
+    from
+    very
+    simple
+    rules
