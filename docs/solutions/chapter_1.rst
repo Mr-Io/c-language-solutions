@@ -385,3 +385,127 @@ Compilation and run:
     very
     simple
     rules
+
+Exercise 1-13.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_13/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    The world is a dangerous place to live; 
+    not because of the people who are evil, 
+    but because of the people who don't do anything about it.
+    Vertical histogram
+    ------------------
+     0:
+     1:|
+     2:|||||
+     3:|||||||||
+     4:
+     5:||||||
+     6:||
+     7:||
+     8:|
+     9:|
+    Horizontal Histogram
+    --------------------
+              |                   
+              |                   
+              |                   
+              |     |             
+           |  |     |             
+           |  |     |             
+           |  |     |             
+           |  |     |  |  |       
+        |  |  |     |  |  |  |  | 
+     0  1  2  3  4  5  6  7  8  9 
+
+Notes:
+    * *-to be updated with an introduction to c arrays-*
+
+Exercise 1-14.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_14/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    " In 1965, Gordon Moore, a founder of Intel Corporation, extrapolated from the chip technology of
+    the day (by which they could fabricate circuits with around 64 transistors on a single chip) to predict
+    that the number of transistors per chip would double every year for the next 10 years. This prediction
+    became known as Moore’s Law. As it turns out, his prediction was just a little bit optimistic, but also too
+    short-sighted. Over more than 50 years, the semiconductor industry has been able to double transistor
+    counts on average every 18 months."     
+    Vertical Histogram
+    ------------------
+    " 34:||
+    ( 40:|
+    ) 41:|
+    , 44:||||||
+    - 45:|
+    . 46:||||
+    0 48:||
+    1 49:|||
+    4 52:|
+    5 53:||
+    6 54:||
+    8 56:|
+    9 57:|
+    A 65:|
+    C 67:|
+    G 71:|
+    I 73:||
+    L 76:|
+    M 77:||
+    O 79:|
+    T 84:|
+    a 97:|||||||||||||||||||||||||||
+    b 98:||||||||||
+    c 99:|||||||||||||||||
+    d 100:|||||||||||||||
+    e 101:||||||||||||||||||||||||||||||||||||||||||
+    f 102:|||||||
+    g 103:||||
+    h 104:|||||||||||||||||||||
+    i 105:|||||||||||||||||||||||||||||
+    j 106:|
+    k 107:|
+    l 108:||||||||||||
+    m 109:|||||||
+    n 110:||||||||||||||||||||||||||
+    o 111:||||||||||||||||||||||||||||||||||||||||||||
+    p 112:||||||||||
+    r 114:|||||||||||||||||||||||||||||||||||
+    s 115:|||||||||||||||||||||||||||||
+    t 116:||||||||||||||||||||||||||||||||||||||||||||||
+    u 117:|||||||||||||||
+    v 118:||||
+    w 119:||||||
+    x 120:||
+    y 121:||||||||||
+
+Notes:
+    * We assumed that character encoding is 
+      `ASCII <https://theasciicode.com.ar/>`_, 
+      meaning that there are no negative `c` values.
+    * We only print "printable" characters 
+      (excluding espace). 
+      The function `isprint` from `<ctype.h>`
+      determines if a character is printable. 
+      (page 249 K&R)
+      
