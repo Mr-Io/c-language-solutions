@@ -114,8 +114,8 @@ there are a lot of thing to do:
     * style
     * error handling
     * integer arithmetics overflow
-    * pointer arithmetics underflow/overflow
-    * pointer rounding error
+    * floating arithmetics underflow/overflow
+    * floating rounding error
     * etc... 
 
   * Use 

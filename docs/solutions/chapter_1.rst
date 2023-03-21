@@ -172,6 +172,8 @@ Notes:
             statement
             expr_3;
         }
+    
+      (as long as `continue` statements are not used)
 
 
 Exercise 1-6.
@@ -267,7 +269,8 @@ Compilation and run:
     value of EOF: -1
 
 Notes:
-    * We knew that `EOF` is an `int` because it is used as
+    * We knew that `EOF` is an `int` (or can be casted to an `int`
+      without problem) because it is used as
       the error return value of functions that return `int`.
 
     * Notice we do not check for errors with `printf`.
@@ -454,63 +457,68 @@ Compilation and run:
     counts on average every 18 months."     
     Vertical Histogram
     ------------------
-    " 34:||
-    ( 40:|
-    ) 41:|
-    , 44:||||||
-    - 45:|
-    . 46:||||
-    0 48:||
-    1 49:|||
-    4 52:|
-    5 53:||
-    6 54:||
-    8 56:|
-    9 57:|
-    A 65:|
-    C 67:|
-    G 71:|
-    I 73:||
-    L 76:|
-    M 77:||
-    O 79:|
-    T 84:|
-    a 97:|||||||||||||||||||||||||||
-    b 98:||||||||||
-    c 99:|||||||||||||||||
-    d 100:|||||||||||||||
-    e 101:||||||||||||||||||||||||||||||||||||||||||
-    f 102:|||||||
-    g 103:||||
-    h 104:|||||||||||||||||||||
-    i 105:|||||||||||||||||||||||||||||
-    j 106:|
-    k 107:|
-    l 108:||||||||||||
-    m 109:|||||||
-    n 110:||||||||||||||||||||||||||
-    o 111:||||||||||||||||||||||||||||||||||||||||||||
-    p 112:||||||||||
-    r 114:|||||||||||||||||||||||||||||||||||
-    s 115:|||||||||||||||||||||||||||||
-    t 116:||||||||||||||||||||||||||||||||||||||||||||||
-    u 117:|||||||||||||||
-    v 118:||||
-    w 119:||||||
-    x 120:||
-    y 121:||||||||||
+    ":||
+    (:|
+    ):|
+    ,:||||||
+    -:|
+    .:||||
+    0:||
+    1:|||
+    4:|
+    5:||
+    6:||
+    8:|
+    9:|
+    A:|
+    C:|
+    G:|
+    I:||
+    L:|
+    M:||
+    O:|
+    T:|
+    a:|||||||||||||||||||||||||||
+    b:||||||||||
+    c:|||||||||||||||||
+    d:|||||||||||||||
+    e:||||||||||||||||||||||||||||||||||||||||||
+    f:|||||||
+    g:||||
+    h:|||||||||||||||||||||
+    i:|||||||||||||||||||||||||||||
+    j:|
+    k:|
+    l:||||||||||||
+    m:|||||||
+    n:||||||||||||||||||||||||||
+    o:||||||||||||||||||||||||||||||||||||||||||||
+    p:||||||||||
+    r:|||||||||||||||||||||||||||||||||||
+    s:|||||||||||||||||||||||||||||
+    t:||||||||||||||||||||||||||||||||||||||||||||||
+    u:|||||||||||||||
+    v:||||
+    w:||||||
+    x:||
+    y:||||||||||
 
 Notes:
-    * We assumed that character encoding is 
-      `ASCII <https://theasciicode.com.ar/>`_, 
-      meaning that there are no negative `c` values.
+    * The most common single-byte character encoding is 
+      `ASCII <https://theasciicode.com.ar/>`_. However, 
+      this code will work no matter the character encoding
+      used, even if there were negative `c` values 
+      representing valid characters. We are making use of the 
+      fact that *negative numbers in a*
+      `two's-complement representation <https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html#fromtwo>`_ 
+      *map to large positive numbers in an
+      unsigned representation*.
     * We only print "printable" characters 
-      (excluding espace). 
+      (excluding space). 
       The function `isprint` from `<ctype.h>`
       determines if a character is printable. 
       (page 249 K&R)
-      
-
+ 
 Exercise 1-15.
 --------------
 *main.c*
@@ -560,3 +568,118 @@ Notes:
     From this exercise onwards,
     we will return 0 to imply normal termination 
     and non-zero values to signal erroneous termination.
+
+     
+
+Exercise 1-16.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_16/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    The more you know, the more you realize you know nothing.
+    Imagination is more important than knowledge.  For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution
+    The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.
+    If people never did silly things, nothing intelligent would ever get done.
+
+    longest line(168):Imagination is more important than kno
+
+
+Notes:
+
+    * We have changed the name of `getname` to `mygetname` because
+      there is a previous declaration of `getline` in `<stdio>`. 
+
+Exercise 1-17.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_17/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    The more you know, the more you realize you know nothing.
+    Imagination is more important than knowledge.  For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution
+    168:Imagination is more important than knowledge.  For knowledge is limited, where
+    The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.
+    83:The greatest enemy of knowledge is not ignorance, it is the illusion of knowle
+    If people never did silly things, nothing intelligent would ever get done.o
+
+Notes:
+
+    * This exercise is extremely easy after we defined the
+      function getline in the previous exercise. 
+      This is the purpose of well defined functions.
+
+Exercise 1-18.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_18/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    Hello
+    5:Hello
+    This has a lot of blanks at the end                                                  
+    35:This has a lot of blanks at the end
+
+Notes:
+
+    * We could have modified the function `mygetline` to achieve
+      the functionality we wanted. However, that would be against
+      the principle of *functions must do one thing and do it well*,
+      which is what `mygetline` already does. 
+
+Exercise 1-19.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_19/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    Hello!
+    !olleH
+    Is this working fine??
+    ??enif gnikrow siht sI
+
+Notes:
+
+    * We make use of the previous functions 
+      `getline` and `stripline` to get the lines 
+      without trailing blanks, tabs and newlines. 
+      This way `reverse` logic is only about reversing
+      the string.
+    * Notice that we do not use an auxiliary char array
+      to reverse the string, making it more memory efficient
+      (at the expense maybe of some code readability). 
+      Is this better? Depends, but we could argue
+      that `reverse` *do one thing and do it well*.
+      
