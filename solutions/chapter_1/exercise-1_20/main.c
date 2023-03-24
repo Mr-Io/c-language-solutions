@@ -1,24 +1,23 @@
 #include <stdio.h>
-#define N 4
+#define TABLEN 8
 
 int main()
 {
 	int c;
-	int k = 0;
+	int pos = 0;
 
 	while ((c=getchar()) != EOF) {
 		if (c == '\t') {
-			while (k < N) {
+			while (pos < TABLEN) {
 				putchar(' ');
-				++k;
+				++pos;
 			}
-		}
-		else {
+		}else{
 			putchar(c);
-			++k;
+			++pos;
 		}
-		if (k >= N || c == '\n') {
-			k = 0;
+		if (pos >= TABLEN || c == '\n') {
+			pos = 0;
 		}
 	}
 	return 0;

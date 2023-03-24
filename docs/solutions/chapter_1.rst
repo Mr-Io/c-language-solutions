@@ -675,11 +675,95 @@ Notes:
     * We make use of the previous functions 
       `getline` and `stripline` to get the lines 
       without trailing blanks, tabs and newlines. 
-      This way `reverse` logic is only about reversing
+      This way `reverse` function logic is only about reversing
       the string.
     * Notice that we do not use an auxiliary char array
       to reverse the string, making it more memory efficient
       (at the expense maybe of some code readability). 
       Is this better? Depends, but we could argue
-      that `reverse` *do one thing and do it well*.
+      that `reverse` function *does one thing and does it well*.
       
+
+Exercise 1-20.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_20/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    This    line has        spaces and tabs intercalated    but the output will have        only spaces.
+    This    line has        spaces and tabs intercalated    but the output will have        only spaces.
+    
+Exercise 1-21.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_21/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
+    this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
+    
+Exercise 1-22.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_22/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    The longest word in any of the major English language dictionaries is pneumonoultramicroscopicsilicovolcanoconiosis (45 letters), a word that refers to a lung disease contracted from the inhalation of very fine silica particles,[12] specifically from a volcano; medically, it is the same as silicosis. The word was deliberately coined to be the longest word in English, and has since been used[citation needed] in a close approximation of its originally intended meaning, lending at least some degree of validity to its claim.[6]
+    The longest word in any of the major 
+    English language dictionaries is 
+    pneumonoultramicroscopicsilicovolcanoc
+    oniosis (45 letters), a word that 
+    refers to a lung disease contracted 
+    from the inhalation of very fine silica 
+    particles,[12] specifically from a 
+    volcano; medically, it is the same as 
+    silicosis. The word was deliberately 
+    coined to be the longest word in 
+    English, and has since been 
+    used[citation needed] in a close 
+    approximation of its originally 
+    intended meaning, lending at least some 
+    degree of validity to its claim.[6]
+    
+Exercise 1-23.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_23/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    /*/* this is a ///* comment */-now it is not
+    -now it is not
+    "/*this comment is inside quotes!*/"
+    "/*this comment is inside quotes!*/"
