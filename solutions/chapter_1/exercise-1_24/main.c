@@ -1,112 +1,136 @@
 #include <stdio.h>
 
-#define FALSE 0
-#define TRUE 1
+# define MAXNESTED 16
 
-int check_char() {
-	int c;
-	c = getchar();
-	if (c  == '\'') {
-		return FALSE;		/* quoted string should contain at least one character*/
-	} 
-	else if (c == '\\') {	/* scape character */
-		getchar();
-	}
-	if (getchar() == '\'') {
-		return TRUE;
-	}
-	return FALSE;
-}
 
-int check_string() {
-	int c;
-	while ((c = getchar()) != EOF) {
-		if (c == '\\') {	/*	Scape character	*/
-			getchar();
-		}
-		if (c == '"') { 
-			return TRUE;
-		}
-	}
-	return FALSE;
-}
+void in_comment(void);
+void in_string(char c);
+int popsep(void);
+int pushsep(char c);
+int check_separators(int c);
 
-int check_comment() {
-	int c;
-	while ((c = getchar()) != EOF) {
-		if (c == '*' && getchar()=='/') {
-			return TRUE;
-		}
-	}
-	return FALSE;
-}
 
-int check_csc(char c) {
-	if (c == '\'' && check_char() == FALSE) {
-		return EOF;
-	}
-	else if (c == '"' && check_string() == FALSE) {
-		return EOF;
-	}
-	else if (c == '/'){
-		c = getchar();
-		if (c == EOF) {		/* when the last character of file is '/'	*/
-			return '/0';	/* just return a whatever character			*/
-		}
-		if (c == '*' && check_comment() == FALSE) {
-			return EOF;
-		}
-	}
-	return c;
-}
+char separatorstack[MAXNESTED];
+int pos = 0;
 
-int check_end(char end) {
-	int c;
-	while ((c = getchar()) != EOF) {
-		if (c == end) {
-			return TRUE;
-		}
-		if (check_syntax(c) == FALSE) {
-			return FALSE;
-		}
-	}
-	return FALSE;
-}
 
-int check_pbb(char c) {
-	if (c == '(' && check_end(')') == FALSE) {
-		return FALSE;
-	}
-	else if (c == '[' && check_end(']') == FALSE) {
-		return FALSE;
-	}
-	else if (c == '{' && check_end('}') == FALSE) {
-		return FALSE;
-	}
-	else if (c == ')' || c == ']' || c == '}') {
-		return FALSE;
-	}
-	return TRUE;
-}
-
-int check_syntax(char c) { 
-	if ((c = check_csc(c)) == EOF) {
-		return FALSE;
-	}
-	if (check_pbb(c) == FALSE) {
-		return FALSE;
-	}
-	return TRUE; 
-}
-
+/* program that check unbalanced parentheses, brackets and braces */
 int main()
 {
 	int c;
+	int res;
 
 	while ((c = getchar()) != EOF) {
-		if (check_syntax(c) == FALSE) {
-			printf("INVALID SYNTAX\n");
-			break;
+		if (c == '/'){
+			if ((c = getchar()) != '*'){
+				if ((res = check_separators(c)) == -1){
+					printf("error\n");
+					return 1;
+				}else if(res == 1){
+					printf("Unbalanced separators\n");
+					return 0;
+				}
+			}else{
+				in_comment();
+			}
+		}else if (c == '"' || c == '\''){
+			in_string(c);
+		}else{
+			if ((res = check_separators(c)) == -1){
+				printf("error\n");
+				return 1;
+			}else if(res == 1){
+				printf("Unbalanced separators\n");
+				return 0;
+			}
 		}
 	}
+	if (pos == 0){
+		printf("Balanced separators\n");
+	}else{
+		printf("Unbalanced separators\n");
+	}
+	return 0;
+}
+
+void in_comment(void)
+{
+	int last_c;
+	int c;
+
+	last_c = getchar();
+	while ((c = getchar()) != EOF){
+		if (last_c == '*' && c == '/'){
+			return;
+		}
+		last_c = c;
+	}
+}
+
+void in_string(char edge)
+{
+	int c;
+
+	while((c = getchar()) != EOF){
+		if (c == '\\'){
+			getchar();
+		}
+		if (c == edge){
+			return;
+		}
+	}
+}
+
+/* return 0 on success and -1 on error */
+int pushsep(char c)
+{
+	extern char separatorstack[MAXNESTED];
+	extern int pos;
+
+	if (pos >= MAXNESTED){
+		return -1;
+	}else{
+		separatorstack[pos++] = c;
+	}
+	return 0;
+}
+
+/* return a char value on success and EOF if the stack is empty */
+int popsep(void)
+{
+	extern char separatorstack[MAXNESTED];
+	extern int pos;
+
+	if (pos <= 0){
+		return EOF;
+	}else{
+		return separatorstack[--pos];
+	}
+}
+
+/* 
+* return 0 is everything is ok,
+* return 1 if an unbalance separator is detected and
+* return -1 on error  
+*/
+int check_separators(int c)
+{
+	if (c == '(' || c == '[' || c == '{'){
+		if (pushsep(c) == -1){
+			return -1;
+		}
+	}else if (c == ')'){
+		if (popsep() != '('){
+			return 1;
+		}
+	}else if (c == ']'){
+		if (popsep() != '['){
+			return 1;
+		}
+	}else if (c == '}'){
+		if (popsep() != '{'){
+			return 1;
+		}
+	}
+	return 0;
 }

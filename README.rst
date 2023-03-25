@@ -116,6 +116,7 @@ there are a lot of thing to do:
     * integer arithmetics overflow
     * floating arithmetics underflow/overflow
     * floating rounding error
+    * refactor
     * etc... 
 
   * Use 
@@ -134,5 +135,5 @@ on the GitHub repo and on the
 wich is automatically updated on each commit.
 
 
-.. _`documentation`: https://master--pydev.netlify.app/
-.. _`web page`: https://master--pydev.netlify.app/
+.. _`documentation`: https://c-solutions.netlify.app/
+.. _`web page`: https://c-solutions.netlify.app/

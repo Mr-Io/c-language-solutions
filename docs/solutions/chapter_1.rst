@@ -767,3 +767,55 @@ Compilation and run:
     -now it is not
     "/*this comment is inside quotes!*/"
     "/*this comment is inside quotes!*/"
+
+Exercise 1-24.
+--------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_1/exercise-1_24/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out 
+    ()[[{()(){}}(([][]))]]
+    Balanced separators
+    ((){}()
+    Unbalanced separators
+    (}){}[]
+    Unbalanced separators
+
+Notes:
+
+    * We make use of the structure of the previous
+      solution 1-23. We just check the balance of the
+      separators with `check_separators` whenever we are outside
+      strings, constant characters and comments.
+    * A `stack data structure <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>`_
+      is implemented with `separatorstack` and `pos` global
+      variables and `pushsep` and `popsep` functions. Due to
+      its features, its the best data structure to check for
+      unbalanced separators.
+    * This is the first exercise where we use global variables.
+      Until now, variables were local; they are defined inside
+      a block `{}`, they came into existence
+      only when the block is entered and dissapear when the
+      block is exited. Global variables are defined outside
+      any block, can be used in any block (previous declaration)
+      and remain in existence after the block exited. 
+    * In general, it is best to avoid the use of global variable
+      and use only when you really need them. This is because
+      global variables introduce 
+      `side effects <https://en.wikipedia.org/wiki/Side_effect_(computer_science)>`_
+      in functional programming.
+
+ .. note::
+
+    * **Definition** is where memory is set aside for the variable
+      (only once per variable).
+    * **Declaration** just tell the compiler that the variable exist
+      and its type (as many declaration as needed per variable)
