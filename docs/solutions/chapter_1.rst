@@ -815,7 +815,17 @@ Notes:
 
  .. note::
 
-    * **Definition** is where memory is set aside for the variable
-      (only once per variable).
-    * **Declaration** just tell the compiler that the variable exist
-      and its type (as many declaration as needed per variable)
+    **Definition** is where memory is set aside for the variable
+    (only once per variable).
+
+    **Declaration** just tell the compiler that the variable exist
+    and its type (as many declaration as needed per variable).
+
+    *Local variables* are defined at the beginning of a block 
+    and they do not need to be declared since
+    their usage is always within the definition scope.
+
+    *Global variables* are defined outside any block and they
+    need to be declared if they are used in a block outside
+    the definition scope 
+    (usage before its definition or usage in other file).

@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Solutions 2nd Edition'
-copyright = '2023, mr-io'
-author = 'mr-io'
+project = 'C Solutions'
+copyright = '2023, Mr-Io'
+author = 'Mr-Io'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -17,7 +17,6 @@ extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -31,8 +30,8 @@ html_theme_options = {
     'logo_name': 'true',
     'description': 'answer C book',
     # github options
-    'github_user': 'mr-io',
-    'github_repo': 'the-c-programming-language-2nd-edition',
+    'github_user': 'Mr-Io',
+    'github_repo': 'c-language-solutions',
     'github_banner': 'true',
     'github_button': 'true',
     # sidebar options
