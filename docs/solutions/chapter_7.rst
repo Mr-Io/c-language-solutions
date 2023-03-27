@@ -1,4 +1,4 @@
-chapter 7
+Chapter 7
 =========
 
 comments and solutions,

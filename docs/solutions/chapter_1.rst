@@ -433,7 +433,11 @@ Compilation and run:
      0  1  2  3  4  5  6  7  8  9 
 
 Notes:
-    * *-to be updated with an introduction to c arrays-*
+    * In C, all elements of an array has the same type and the
+      array size never changes during the array lifetime. Before
+      C99, the array must be of constant fixed size 
+      but since C99 the array size can be an integer expression
+      evaluated everytime the array is allocated. 
 
 Exercise 1-14.
 --------------
@@ -510,7 +514,7 @@ Notes:
       used, even if there were negative `c` values 
       representing valid characters. We are making use of the 
       fact that *negative numbers in a*
-      `two's-complement representation <https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html#fromtwo>`_ 
+      `two's-complement representation <https://en.wikipedia.org/wiki/Two's_complement>`_ 
       *map to large positive numbers in an
       unsigned representation*.
     * We only print "printable" characters 

@@ -3,6 +3,9 @@
 #include <float.h>
 
 
+float uint2float(unsigned int n);
+double uint2double(long unsigned int n);
+
 int main()
 {
 	printf("(In this machine 'char == signed char')\n");
@@ -50,13 +53,37 @@ int main()
 	printf("%24ld\n", (long int)~(1l << (sizeof(long int)*8l - 1l)));
 	putchar('\n');
 	/* FLOAT */
-	printf("FLT_EPSILON:%23e\n", FLT_EPSILON);
-	printf("FLT_MIN:   %24e\n", FLT_MIN);
-	printf("FLT_MAX:   %24e\n", FLT_MAX);
+	printf("FLT_MIN:   %24e", FLT_MIN);
+	printf("%24e\n", uint2float(1));
+	printf("FLT_MAX:   %24e", FLT_MAX);
+	printf("%24e\n", -uint2float(~(1u << 23)));
 	putchar('\n');
 	/* DOUBLE */
-	printf("DBL_EPSILON:%23e\n", DBL_EPSILON);
-	printf("DBL_MIN:   %24e\n", DBL_MIN);
-	printf("DBL_MAX:   %24e\n", DBL_MAX);
-
+	printf("DBL_MIN:   %24e", DBL_MIN);
+	printf("%24e\n", uint2double(1));
+	printf("DBL_MAX:   %24e", DBL_MAX);
+	printf("%24e\n", -uint2double(~(1lu << 52)));
+	return 0;
 } 
+
+float uint2float(unsigned int n)
+{
+	union utmp{
+		unsigned int i;
+		float f;
+	};
+	union utmp t;
+	t.i = n;
+	return t.f;
+}
+
+double uint2double(long unsigned int n)
+{
+	union utmp{
+		long unsigned int i;
+		double f;
+	};
+	union utmp t;
+	t.i = n;
+	return t.f;
+}

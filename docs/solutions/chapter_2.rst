@@ -34,20 +34,62 @@ Compilation and run:
     LONG_MIN:      -9223372036854775808    -9223372036854775808
     LONG_MAX:       9223372036854775807     9223372036854775807
 
-    FLT_EPSILON:           1.192093e-07
-    FLT_MIN:               1.175494e-38
-    FLT_MAX:               3.402823e+38
+    FLT_MIN:               1.175494e-38            1.401298e-45
+    FLT_MAX:               3.402823e+38            3.402823e+38
 
-    DBL_EPSILON:           2.220446e-16
-    DBL_MIN:              2.225074e-308
-    DBL_MAX:              1.797693e+308
+    DBL_MIN:              2.225074e-308           4.940656e-324
+    DBL_MAX:              1.797693e+308           1.797693e+308 
 
 
 Notes:
 
-    * We have no way of computing the ranges of the various 
-      floating-point types (at least until :ref:`chapter-6`)
-      because we cannot manipulate bits of floating-point variables
-      and casting from integer to floating-point modifies the bits.
+    * In order to determine the ranges by direct computation 
+      it is necessary to know the bit representation of the different
+      data types.
+      Some useful references are 
+      `Unsigned and Signed Encodings <https://onlinetoolz.net/unsigned-signed>`_,
+      `Two's-Complement Encodings <https://en.wikipedia.org/wiki/Two's_complement>`_ and
+      `IEEE Floating-Point Representation <https://www.h-schmidt.net/FloatConverter/IEEE754.html>`_. 
 
+    * Since casting between integer and floats change the bit 
+      patterns of the variable, we defined 2 functions that do
+      "special casts" without changing the bit pattern
+      of the variable:
+        
+        * `uint2float()` cast from `unsigned int` to `float`.
+        * `uint2double()` cast from `long unsigned int` to `double`.
 
+      We are not suppose to know how those 2 functions
+      works until we see `unions` in :ref:`chapter-6`
+      (another way to do it would be using pointers which are
+      explained in :ref:`chapter-5`).
+
+    * Notice that the direct computation of 
+      the minimum floating-point number 
+      of `float` and `double` give different results than
+      the standard headers.
+      This is because we have computed the smaller floating-point
+      number that we can use before underflowing to 0, while 
+      the standard header only defines the smallest *normalized* 
+      floating-point number. 
+
+Exercise 2-2.
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_02/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    short-circuiting of && and || is nice.
+    short-circuiting of && and || is nice.
+
+..  add info about initialization of 
+    local, global and static variables and 
+    const keywork.

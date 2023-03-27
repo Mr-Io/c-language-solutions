@@ -36,7 +36,7 @@ elegant K&R C style.
 The solutions are provided in 2 forms and you may be interested in one or both of them:
   * `solutions <https://github.com/Mr-Io/c-language-solutions/tree/master/solutions>`_:
     If you just want to read the code.
-  * `documentation`_: If you want to read the solution in a "book-style" fashion 
+  * `documentation`_: If you want to read the solutions in a "book-style" fashion 
     were each exercise and solution is commented, compiled and executed.
     (work in progress)
 
@@ -113,9 +113,10 @@ there are a lot of thing to do:
     * bugs
     * style
     * error handling
-    * integer arithmetics overflow
-    * floating arithmetics underflow/overflow
-    * floating rounding error
+    * avoid unsafe standard functions (due to overflow) 
+    * check integer arithmetics overflow
+    * check floating arithmetics underflow/overflow
+    * check floating rounding errors
     * refactor
     * etc... 
 

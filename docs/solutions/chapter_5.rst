@@ -1,4 +1,6 @@
-chapter 5
+.. _chapter-5:
+
+Chapter 5
 =========
 
 comments and solutions,
