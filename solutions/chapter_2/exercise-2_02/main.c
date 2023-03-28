@@ -7,7 +7,7 @@ enum {CONTINUE, BREAK};
 int main()
 {
 	char s[MAXLINE];
-	int lim = MAXLINE;
+	const int lim = MAXLINE;
 	int c;
 	int i;
 	/*

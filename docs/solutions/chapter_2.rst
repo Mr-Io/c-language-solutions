@@ -1,8 +1,8 @@
 Chapter 2 
 =========
 
-Exercise 2-1.
--------------
+Exercise 2-1
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_2/exercise-2_01/main.c
@@ -73,8 +73,8 @@ Notes:
       the standard header only defines the smallest *normalized* 
       floating-point number. 
 
-Exercise 2-2.
--------------
+Exercise 2-2
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_2/exercise-2_02/main.c
@@ -89,7 +89,81 @@ Compilation and run:
     $ ./a.out
     short-circuiting of && and || is nice.
     short-circuiting of && and || is nice.
+  
+Notes:
+
+  * We have used the qualifier `const` for the first time:
+     
+    .. code-block :: c
+
+      	const int lim = MAXLINE;
+
+    It simply indicates that the value of `lim` will not 
+    be changed. The compiler makes an
+    error if you try to modify a read-only variable. 
+    You should initialize
+    read-only variables as it is the only way to assign a useful
+    value to them.
+
+
+.. note:: 
+
+    `const` can be applied to variables to specify that its value
+    will not be changed during its lifetime. 
+    When applied to an array, it indicates that its elements will
+    not be altered:
+
+    .. code-block:: c
+
+      const int arr[5] = {1, 2, 3, 4, 5};
+      arr[3] = 2; /* error */
+    
+    It can be applied to function parameters and it is particulary 
+    useful to indicate that a function does not change 
+    the elements of some argument array:
+
+    .. code-block:: c
+
+      long unsigned strnlen(const char *s, long unsigned n);
+
+    From this exercise onwards,
+    we will make use of the `const` qualifier when a variable
+    should remain constant. 
 
 ..  add info about initialization of 
     local, global and static variables and 
-    const keywork.
+    keywork.
+
+
+Exercise 2-3
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_03/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    0x1 0X2 0xa 0xFF ff 5 hello 0x11 0xFg
+    1
+    2
+    10
+    255
+    255
+    5
+    -1
+    17
+    -1
+
+Notes:
+
+  * We make use of `getword` function from :ref:`exercise-1_22` 
+    for outputing.
+
+..  add info about type conversion, casting
+    and implicit casting.

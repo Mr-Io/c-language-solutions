@@ -1,8 +1,8 @@
 Chapter 1 
 =========
 
-Exercise 1-1.
--------------
+Exercise 1-1
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_01/main.c
@@ -23,8 +23,8 @@ Notes:
       your program begins executing at the beginning of `main`. 
       This mean that every program must have a `main` somewhere.
 
-Exercise 1-2.
--------------
+Exercise 1-2
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_02/main.c
@@ -52,8 +52,8 @@ Notes:
       the behavior is undefined.
       Most compiler just do a warning and ignore the \\.
 
-Exercise 1-3.
--------------
+Exercise 1-3
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_03/main.c
@@ -85,8 +85,8 @@ Compilation and run:
            280    137.8
            300    148.9
 
-Exercise 1-4.
--------------
+Exercise 1-4
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_04/main.c
@@ -119,8 +119,8 @@ Compilation and run:
         300      572.0
  
 
-Exercise 1-5.
--------------
+Exercise 1-5
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_05/main.c
@@ -176,8 +176,8 @@ Notes:
       (as long as `continue` statements are not used)
 
 
-Exercise 1-6.
--------------
+Exercise 1-6
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_06/main.c
@@ -252,8 +252,8 @@ Notes:
         to check what the functions you are using 
         return on error.
 
-Exercise 1-7.
--------------
+Exercise 1-7
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_07/main.c
@@ -285,8 +285,8 @@ Notes:
     you tell the user, anyway?
 
 
-Exercise 1-8.
--------------
+Exercise 1-8
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_08/main.c
@@ -303,8 +303,8 @@ Compilation and run:
     General kenobi...
     Number of blanks, tabs and newlines: 4
 
-Exercise 1-9.
--------------
+Exercise 1-9
+------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_09/main.c
@@ -320,8 +320,8 @@ Compilation and run:
     This     is  a line   with   a    lot of    blanks!
     This is a line with a lot of blanks!
 
-Exercise 1-10.
---------------
+Exercise 1-10
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_10/main.c
@@ -337,8 +337,8 @@ Compilation and run:
     \Difficult      subjects cannot be described    with light prose
     \\Difficult\tsubjects cannot be described\twith light prose
 
-Exercise 1-11.
---------------
+Exercise 1-11
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_11/main.c
@@ -364,8 +364,8 @@ Notes:
       that test boundary conditions. 
       *-to be updated with code test practices-*
 
-Exercise 1-12.
---------------
+Exercise 1-12
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_12/main.c
@@ -390,8 +390,8 @@ Compilation and run:
     rules
 
 
-Exercise 1-13.
---------------
+Exercise 1-13
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_13/main.c
@@ -439,8 +439,8 @@ Notes:
       but since C99 the array size can be an integer expression
       evaluated everytime the array is allocated. 
 
-Exercise 1-14.
---------------
+Exercise 1-14
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_14/main.c
@@ -523,8 +523,8 @@ Notes:
       determines if a character is printable. 
       (page 249 K&R)
  
-Exercise 1-15.
---------------
+Exercise 1-15
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_15/main.c
@@ -575,8 +575,8 @@ Notes:
 
      
 
-Exercise 1-16.
---------------
+Exercise 1-16
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_16/main.c
@@ -602,8 +602,8 @@ Notes:
     * We have changed the name of `getname` to `mygetname` because
       there is a previous declaration of `getline` in `<stdio>`. 
 
-Exercise 1-17.
---------------
+Exercise 1-17
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_17/main.c
@@ -629,8 +629,8 @@ Notes:
       function getline in the previous exercise. 
       This is the purpose of well defined functions.
 
-Exercise 1-18.
---------------
+Exercise 1-18
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_18/main.c
@@ -655,8 +655,8 @@ Notes:
       the principle of *functions must do one thing and do it well*,
       which is what `mygetline` already does. 
 
-Exercise 1-19.
---------------
+Exercise 1-19
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_19/main.c
@@ -688,8 +688,8 @@ Notes:
       that `reverse` function *does one thing and does it well*.
       
 
-Exercise 1-20.
---------------
+Exercise 1-20
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_20/main.c
@@ -705,8 +705,8 @@ Compilation and run:
     This    line has        spaces and tabs intercalated    but the output will have        only spaces.
     This    line has        spaces and tabs intercalated    but the output will have        only spaces.
     
-Exercise 1-21.
---------------
+Exercise 1-21
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_21/main.c
@@ -722,8 +722,10 @@ Compilation and run:
     this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
     this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
     
-Exercise 1-22.
---------------
+.. _exercise-1_22:
+
+Exercise 1-22
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_22/main.c
@@ -753,8 +755,8 @@ Compilation and run:
     intended meaning, lending at least some 
     degree of validity to its claim.[6]
     
-Exercise 1-23.
---------------
+Exercise 1-23
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_23/main.c
@@ -772,8 +774,8 @@ Compilation and run:
     "/*this comment is inside quotes!*/"
     "/*this comment is inside quotes!*/"
 
-Exercise 1-24.
---------------
+Exercise 1-24
+-------------
 *main.c*
 
 .. literalinclude :: ../../solutions/chapter_1/exercise-1_24/main.c

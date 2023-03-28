@@ -100,14 +100,19 @@ Linux natively with
 
 How to contribute
 -----------------
-This repository is simple, it only has the main branch and
+One of the repository goals is to be welcoming to beginners 
+and to people starting to learn C and GitHub. If it is your first
+time consider following a guide to `make your first contribution`_.
+
+.. _make your first contribution: https://github.com/firstcontributions/first-contributions
+
+This repository has only the main branch and
 you are very welcome to contribute to it; 
 just follow the simple
 `fork and pull request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork>`_
 method. 
 
-The repository has been created recently and 
-there are a lot of thing to do:
+Here is a list of topics that are perfect to start with:
   * Improve solutions code: 
 
     * bugs
@@ -125,6 +130,7 @@ there are a lot of thing to do:
     to build the web and documentation 
     (work in progress).
   * Correct english grammar and/or spelling or improve the wording.
+  * Add appropiate badges to the repository.
 
 Changes or improvements unrelated to this are also welcome
 and may be done with a pull request.
