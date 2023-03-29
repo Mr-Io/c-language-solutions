@@ -124,7 +124,7 @@ Notes:
 
     .. code-block:: c
 
-      long unsigned strnlen(const char *s, long unsigned n);
+      long unsigned strnlen(const char s[], long unsigned n);
 
     From this exercise onwards,
     we will make use of the `const` qualifier when a variable
@@ -134,6 +134,9 @@ Notes:
     local, global and static variables and 
     keywork.
 
+..  inline functions: A reasonable rule of thumb is only use static inline 
+    and for functions that have less than 3 lines of code in them.
+    Prefer static inline functions to macros.
 
 Exercise 2-3
 ------------
@@ -167,3 +170,59 @@ Notes:
 
 ..  add info about type conversion, casting
     and implicit casting.
+
+Exercise 2-4
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_04/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    Confusion is part of programming
+    aeiou
+    Cnfsn s prt f prgrmmng
+
+Notes:
+
+  * We make use of `mygetline` function from :ref:`exercise-1_16` 
+    for outputing.
+  * We do not need to check for calling errors with `mygetline`;
+    both `s` and `e` strings are initialized even if there is
+    an EOF.
+
+..  add info about the use of unitary operators ++ --, 
+    best code practices?
+
+Exercise 2-5
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_05/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    fly slyly in the sky.
+    aeiou
+    position: 10
+
+Notes:
+
+  * We make use of the structure of previous solution; only a
+    singe function is changed. This is an outcome of 
+    making solutions code modular (by using functions for 
+    each specific job).
+
+..  possibly talk about modularity, examples and why is it good

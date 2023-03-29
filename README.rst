@@ -12,9 +12,10 @@ Solutions to The C Programming Language - 2nd Edition
 .. end-badges
 
 **This is a comprehensive solution guide for the exercises 
-of the classic book**  
-`The C Programming Language - 2nd Edition <https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628>`_,
+of the classic book**  `The C Programming Language - 2nd Edition`_,
 **usually referred to as K&R**.
+
+.. _The C Programming Language - 2nd Edition: https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628
 
 Even though the last edition of K&R (2nd edition) was published in 1988, 
 it is still condidered today, by many, 
@@ -34,11 +35,13 @@ The exercises of the books are solved following modern
 good practices but also trying to stay true to the
 elegant K&R C style. 
 The solutions are provided in 2 forms and you may be interested in one or both of them:
-  * `solutions <https://github.com/Mr-Io/c-language-solutions/tree/master/solutions>`_:
-    If you just want to read the code.
+  * `solutions`_: If you just want to read the code.
   * `documentation`_: If you want to read the solutions in a "book-style" fashion 
     were each exercise and solution is commented, compiled and executed.
     (work in progress)
+
+.. _solutions: https://github.com/Mr-Io/c-language-solutions/tree/master/solutions
+.. _documentation: https://clanguage.solutions/introduction/intro.html
 
 .. end-links
 
@@ -142,5 +145,4 @@ on the GitHub repo and on the
 wich is automatically updated on each commit.
 
 
-.. _`documentation`: https://c-solutions.netlify.app/
-.. _`web page`: https://c-solutions.netlify.app/
+.. _web page: https://clanguage.solutions

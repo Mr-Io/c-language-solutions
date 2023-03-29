@@ -573,7 +573,7 @@ Notes:
     we will return 0 to imply normal termination 
     and non-zero values to signal erroneous termination.
 
-     
+.. _exercise-1_16:
 
 Exercise 1-16
 -------------

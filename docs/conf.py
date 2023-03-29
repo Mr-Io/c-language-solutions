@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'C Solutions'
-copyright = '2023, Mr-Io'
+copyright = 'Copyright 2023 Mr-Io'
 author = 'Mr-Io'
 
 # -- General configuration ---------------------------------------------------
