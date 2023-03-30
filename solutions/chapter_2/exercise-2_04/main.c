@@ -2,7 +2,6 @@
 
 #define MAXLINE 100
 
-
 int cins(const char s[], char c);
 void squeeze(char s[], const char e[]);
 

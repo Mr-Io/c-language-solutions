@@ -11,6 +11,9 @@ Solutions to The C Programming Language - 2nd Edition
 
 .. end-badges
 
+
+.. ini-intro
+
 **This is a comprehensive solution guide for the exercises 
 of the classic book**  `The C Programming Language - 2nd Edition`_,
 **usually referred to as K&R**.
@@ -25,15 +28,21 @@ The authors *Brian W. Kernighan* and *Dennis M. Ritchie*
 not only presented C in an elegant and pragmatic style, but also
 designed a series of exercises on each chapter to help reinforce its knowledge.
 
+The exercises of the book are solved 
+staying true to comtemporary K&R C style 
+while 
+applying modern coding principles 
+so that a compiler can generate optimized code. 
+
+This repository is just a tribute to K&R. 
+
 .. 1-2 paragraph descrition. what the project is about and motivation (why the project exist)
 .. why the project stand out
 
+.. end-intro 
+
 .. ini-links
 
-This repository is just a tribute to K&R. 
-The exercises of the books are solved following modern
-good practices but also trying to stay true to the
-elegant K&R C style. 
 The solutions are provided in 2 forms and you may be interested in one or both of them:
   * `solutions`_: If you just want to read the code.
   * `documentation`_: If you want to read the solutions in a "book-style" fashion 
@@ -44,6 +53,8 @@ The solutions are provided in 2 forms and you may be interested in one or both o
 .. _documentation: https://clanguage.solutions/introduction/intro.html
 
 .. end-links
+
+.. ini-cstyle
 
 C Code style
 ------------
@@ -67,9 +78,13 @@ follow some modern "good practices":
     arithmetics.
   * Avoid the use of `typedef`.
 
+.. end-cstyle
+
+.. ini-comp
+
 Compiler, C version and OS
 --------------------------
-Currently, there are 4 `ISO versions of C <https://stackoverflow.com/a/17209532/13695519>`_.
+Currently, there are many `ISO versions of C <https://stackoverflow.com/a/17209532/13695519>`_.
 In this repository **the code is compiled using C17**.
 Anyway, the code will compile just fine in any C ISO
 and, my recommendation is just to
@@ -101,6 +116,28 @@ Windows is not a Unix-like OS but it can support
 Linux natively with 
 `WSL <https://learn.microsoft.com/es-es/windows/wsl/install>`_.
 
+.. end-comp
+
+.. ini-copti
+
+C Code optimization
+-------------------
+We optimize the code of the solutions as much as we can
+as long as we do not reduce code readability. 
+For that, we use appropiate data structures and alrgorithms and
+follow these 3 coding principles:
+  * *Minimize function calls (and any computation) in loops*
+  * *Minimize pointer derefencing (including subscript operator) in loops*
+  * *Declare struct members of the same type together*
+
+A more extensive explanation of C optimization within the
+code of the solutions 
+can be found in `C optimization docs`_.
+
+.. _C optimization docs: https://clanguage.solutions/#c-code-optimization
+
+.. ini-contri
+
 How to contribute
 -----------------
 One of the repository goals is to be welcoming to beginners 
@@ -126,6 +163,7 @@ Here is a list of topics that are perfect to start with:
     * check floating arithmetics underflow/overflow
     * check floating rounding errors
     * refactor
+    * optimize using coding principles
     * etc... 
 
   * Use 
@@ -144,5 +182,6 @@ on the GitHub repo and on the
 `web page`_,
 wich is automatically updated on each commit.
 
-
 .. _web page: https://clanguage.solutions
+
+.. end-contri
