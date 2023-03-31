@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'C Solutions'
+project = 'README'
 copyright = 'Copyright 2023 Mr-Io'
 author = 'Mr-Io'
 

@@ -226,3 +226,82 @@ Notes:
     each specific job).
 
 ..  possibly talk about modularity, examples and why is it good
+
+Exercise 2-6
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_06/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    0xF 1 1 0x0
+    0x0000000D
+    0x0 4 1 0xFF
+    0x00000010
+
+Notes:
+
+  * For position `p` we start counting from the right
+    (being the rightmost position `0`), as it is done 
+    with the code example of Section 2.9 K&R.
+  * It is good practice to use `unsigned` when manipulating bits 
+    because rightshifting negative values is 
+    implementation-defined. For example:
+    
+    .. code-block:: c
+
+      a >> n;
+
+    may have different results with different compilers
+    when `a` is negative.
+
+Exercise 2-7
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_07/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    0x0 1 1
+    0x00000002
+    0x0 0 1
+    0x00000001
+    0x10 3 4
+    0x0000001F
+
+Exercise 2-8
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_08/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    0x1 1
+    0x80000000
+    0x3 2
+    0xC0000000
+    0xFF 8
+    0xFF000000
+    0xFF 16
+    0x00FF0000

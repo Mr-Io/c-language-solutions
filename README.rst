@@ -50,7 +50,7 @@ The solutions are provided in 2 forms and you may be interested in one or both o
     (work in progress)
 
 .. _solutions: https://github.com/Mr-Io/c-language-solutions/tree/master/solutions
-.. _documentation: https://clanguage.solutions/introduction/intro.html
+.. _documentation: https://clanguage.solutions/
 
 .. end-links
 
@@ -79,6 +79,22 @@ follow some modern "good practices":
   * Avoid the use of `typedef`.
 
 .. end-cstyle
+
+C Code optimization
+-------------------
+We optimize the code of the solutions as much as we can
+as long as we do not reduce code readability. 
+For that, we use appropiate data structures and alrgorithms and
+follow these 3 coding principles:
+  * *Minimize function calls (and any computation) in loops*
+  * *Minimize pointer derefencing (including subscript operator) in loops*
+  * *Declare struct members of the same type together*
+
+A more extensive explanation of C optimization within the
+code of the solutions 
+can be found in `C optimization docs`_.
+
+.. _C optimization docs: https://clanguage.solutions/#c-code-optimization
 
 .. ini-comp
 
@@ -117,24 +133,6 @@ Linux natively with
 `WSL <https://learn.microsoft.com/es-es/windows/wsl/install>`_.
 
 .. end-comp
-
-.. ini-copti
-
-C Code optimization
--------------------
-We optimize the code of the solutions as much as we can
-as long as we do not reduce code readability. 
-For that, we use appropiate data structures and alrgorithms and
-follow these 3 coding principles:
-  * *Minimize function calls (and any computation) in loops*
-  * *Minimize pointer derefencing (including subscript operator) in loops*
-  * *Declare struct members of the same type together*
-
-A more extensive explanation of C optimization within the
-code of the solutions 
-can be found in `C optimization docs`_.
-
-.. _C optimization docs: https://clanguage.solutions/#c-code-optimization
 
 .. ini-contri
 
