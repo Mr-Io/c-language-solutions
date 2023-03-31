@@ -305,3 +305,65 @@ Compilation and run:
     0xFF000000
     0xFF 16
     0x00FF0000
+
+Exercise 2-9
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_09/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    0xF
+    4
+    0x1
+    1
+    0x3
+    2
+    0xF0F0
+    8
+
+Exercise 2-10
+-------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_2/exercise-2_10/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc main.c
+    $ ./a.out
+    EXPLICIT IS BETTER THAN IMPLICIT.
+    explicit is better than implicit.
+    Simple Is Better Than Complex.
+    simple is better than complex.
+    CoMpLeX Is bEtTeR ThAn cOmPlIcAtEd.
+    complex is better than complicated.
+
+Notes: 
+
+  * We use for the first time the terniary operator:
+    
+    .. code-block:: c
+
+        return (c < 'A' || c > 'Z') ? c : c + 'a' - 'A';
+    
+    is equivalent to:
+
+    .. code-block:: c
+
+        if (c < 'A' || c > 'Z'){
+          return c;
+        }else{
+          return c + 'a' - 'A';
+        }  

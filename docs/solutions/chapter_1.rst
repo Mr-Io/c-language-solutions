@@ -194,15 +194,16 @@ Compilation and run:
     111111111111
 
 Notes:
-    * Any assignment in C evaluates to 
-      the value of the left hand side after after the assignment. 
+    * An assignment statement in C has the type and value of
+      the left operand after the assignment. 
       For example the expression 
       
       .. code-block:: c
 
         c = getchar() 
         
-      evaluates to the return value of `getchar()`.
+      evaluates to the return value of `getchar()` and
+      has the same type as `c`.
       And since the evaluation is done right to left
       this make this kind of expressions possible:
 
@@ -601,6 +602,10 @@ Notes:
 
     * We have changed the name of `getname` to `mygetname` because
       there is a previous declaration of `getline` in `<stdio>`. 
+
+..  talk about short circuiting of && and || and how the order of 
+    evaluation is not specified for  other operators including 
+    function arguments.
 
 Exercise 1-17
 -------------
