@@ -626,13 +626,36 @@ Compilation and run:
     168:Imagination is more important than knowledge.  For knowledge is limited, where
     The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.
     83:The greatest enemy of knowledge is not ignorance, it is the illusion of knowle
-    If people never did silly things, nothing intelligent would ever get done.o
+    If people never did silly things, nothing intelligent would ever get done.
 
 Notes:
 
-    * This exercise is extremely easy after we defined the
-      function getline in the previous exercise. 
-      This is the purpose of well defined functions.
+    * This exercise is easy after we defined the function `mygetline` in the previous solution
+      (this is the purpose of well defined functions). Instead of that, we used this exercise
+      to learn how to use `getline` function from stdlib. To fully understand this function
+      we need to know pointers and memory allocation which are explained in :ref:`chapter-5`.
+      Meanwhile we are gonna use this structure: 
+
+      .. code-block:: c
+
+        #include <stdlib.h>
+        #include <stdlib.h>
+
+        char *s;
+        int len;
+        long unsigned n;
+
+        while((len = getline(&s, &n, stdin)) > 0){
+           /* ... */
+        }
+        free(s);
+
+      knowing that  `len` is the number of character read including '\\n', 
+      `s` is where the string is saved, and `n` is not used for anything.
+      Calling `free` function is mandatory which is declared in `<stdlib.h>`.
+
+
+.. _exercise-1_18:
 
 Exercise 1-18
 -------------
@@ -655,10 +678,12 @@ Compilation and run:
 
 Notes:
 
-    * We could have modified the function `mygetline` to achieve
-      the functionality we wanted. However, that would be against
-      the principle of *functions must do one thing and do it well*,
-      which is what `mygetline` already does. 
+    * We could have modified the function `mygetline` from 
+      :ref:`exercise-1_16` to achieve the functionality we wanted. 
+      However, that would make the code less modular, so instead 
+      we differentiate between *get the line* logic
+      and *strip the line* logic in 2 different functions, each of them
+      *does one thing and does it well*.
 
 Exercise 1-19
 -------------
@@ -681,16 +706,13 @@ Compilation and run:
 
 Notes:
 
-    * We make use of the previous functions 
-      `getline` and `stripline` to get the lines 
-      without trailing blanks, tabs and newlines. 
+    * We make use of `stripline` from :ref:`exercise-1_18` 
+      to get the lines without trailing blanks, tabs and newlines. 
       This way `reverse` function logic is only about reversing
       the string.
     * Notice that we do not use an auxiliary char array
       to reverse the string, making it more memory efficient
       (at the expense maybe of some code readability). 
-      Is this better? Depends, but we could argue
-      that `reverse` function *does one thing and does it well*.
       
 
 Exercise 1-20

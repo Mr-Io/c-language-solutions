@@ -1,19 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAXLINE 100
 
 int cins(const char s[], char c);
 void squeeze(char s[], const char e[]);
 
-int mygetline(char s[], int lim);
-
 int main() 
 {
-	char s[MAXLINE];
-	char e[MAXLINE];
+	char *s = NULL;
+	char *e = NULL;
+	long unsigned ls = 0;
+	long unsigned le = 0;
 
-	mygetline(s, MAXLINE);
-	mygetline(e, MAXLINE);
+	if (getline(&s, &ls, stdin) == -1){
+		printf("error getline: possible EOF\n");
+		return 1;
+	}
+	if (getline(&e, &le, stdin) == -1){
+		printf("error getline: possible EOF\n");
+		return 1;
+	}
 	squeeze(s, e);
 	printf("%s\n", s);
 	return 0;
@@ -42,25 +49,4 @@ void squeeze(char s[], const char e[])
 		}
 	}
 	s[j] = '\0';
-}
-
-int mygetline(char s[], int lim) 
-{
-	int c, i;
-
-	for (i = 0; i<lim-1 &&  (c = getchar()) != EOF && c != '\n'; ++i) {
-		s[i] = c;
-	}
-	if (i == lim-1){
-		s[i-1] = '\n';
-	}else if (c == '\n' || (c == EOF && i > 0)){
-		s[i] = '\n';
-		++i;
-	}
-	s[i] = '\0';
-	while (c != EOF && c != '\n'){
-		c = getchar();
-		++i;
-	}
-	return i;
 }

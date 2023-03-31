@@ -1,40 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-#define MAXLINE 80
 #define LINELIMIT 80
-
-int mygetline(char line[], int max);
 
 int main()
 {
-	char line[MAXLINE];
+	long unsigned n;
 	int len;
+	char *s;
 
-	while ((len = mygetline(line, MAXLINE)) > 0){
+	s = NULL;
+	n = 0;
+	while ((len = getline(&s, &n, stdin)) > 0){
 		if (len > LINELIMIT) {
-			printf("%d:%s", len, line);
+			printf("%d:%s", len, s);
 		}
 	}
+	free(s);
 	return 0;
-}
-
-int mygetline(char s[], int lim) 
-{
-	int c, i;
-
-	for (i = 0; i<lim-1 &&  (c = getchar()) != EOF && c != '\n'; ++i) {
-		s[i] = c;
-	}
-	if (i == lim-1){
-		s[i-1] = '\n';
-	}else if (c == '\n' || (c == EOF && i > 0)){
-		s[i] = '\n';
-		++i;
-	}
-	s[i] = '\0';
-	while (c != EOF && c != '\n'){
-		c = getchar();
-		++i;
-	}
-	return i;
 }

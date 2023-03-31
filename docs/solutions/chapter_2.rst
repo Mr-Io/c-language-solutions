@@ -189,14 +189,6 @@ Compilation and run:
     aeiou
     Cnfsn s prt f prgrmmng
 
-Notes:
-
-  * We make use of `mygetline` function from :ref:`exercise-1_16` 
-    for outputing.
-  * We do not need to check for calling errors with `mygetline`;
-    both `s` and `e` strings are initialized even if there is
-    an EOF.
-
 ..  add info about the use of unitary operators ++ --, 
     best code practices?
 
