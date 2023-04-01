@@ -44,9 +44,9 @@ even to the point that we can consider some program
 to only work correctly when
 the appropiate data structures and algorithms are used. 
 In K&R, computer science knowledge is somewhat assumed on the lector.
-The good news is that we dont need to be experts of the subject,
-it can be learned
-and/or researched while reading and doing the exercises.
+We dont need to be experts of the subject though,
+it can be learned and/or researched 
+while reading and doing the exercises.
 `CLRS`_ is an excellent reference book for that.
 
 .. _CLRS: https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/ 
@@ -55,7 +55,8 @@ Level 1 optimization is not relevant for this repository.
 
 Level 3 optimization involves loop unrolling, 
 vector instruction optimizations, usage of functional
-style when branch prediction is not possible, 
+style when branch prediction is not possible,
+minimize cache misses with locality... 
 and other techniques that; 1. make the optimization not portable 
 (only maximized for the target machine) and 2. make the code order
 of magnitude more complex and less readable. 
