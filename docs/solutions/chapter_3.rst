@@ -50,3 +50,29 @@ Notes:
       since a profiler should not be used to *measure* performance.
 
 .. _gprof: https://ftp.gnu.org/old-gnu/Manuals/gprof-2.9.1/html_mono/gprof.html
+
+Exercise 3-2
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_3/exercise-3_02/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc - pg main.c
+    $ ./a.out
+    \Difficult      subjects cannot be described    with light prose
+    \\Difficult\tsubjects cannot be described\twith light prose\n
+    \Difficult      subjects cannot be described    with light prose
+
+Notes:
+
+    * Notice that, while we do not need to define the size of `t`
+      because it is allocated by `getline` function,
+      we do need to define the size of array `s` 
+      (dynamic memory allocation is not used until solutions
+      of :ref:`chapter-5`)

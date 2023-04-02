@@ -42,3 +42,4 @@ html_theme_options = {
     'pre_bg': '#FFFFCC',
     'code_highlight': '#FFFF80',
 }
+html_favicon = "_static/favicon.ico"
