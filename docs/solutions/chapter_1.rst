@@ -19,9 +19,9 @@ Compilation and run:
 
 
 Notes:
-    * In c, `main` is special, 
-      your program begins executing at the beginning of `main`. 
-      This mean that every program must have a `main` somewhere.
+    * In c, ``main`` is special, 
+      your program begins executing at the beginning of ``main``. 
+      This mean that every program must have a ``main`` somewhere.
 
 Exercise 1-2
 ------------
@@ -50,7 +50,7 @@ Notes:
     * On page 193 K&R, it is stated that if 
       the escape sequence is not recognized 
       the behavior is undefined.
-      Most compiler just do a warning and ignore the \\.
+      Most compiler just do a warning and ignore the ``\``.
 
 Exercise 1-3
 ------------
@@ -154,7 +154,7 @@ Compilation and run:
  
 
 Notes:
-    * Notice the equivalence between `while` and `for` 
+    * Notice the equivalence between ``while`` and ``for`` 
       iteration statements:
       
       .. code-block:: c
@@ -173,7 +173,7 @@ Notes:
             expr_3;
         }
     
-      (as long as `continue` statements are not used)
+      (as long as ``continue`` statements are not used)
 
 
 Exercise 1-6
@@ -202,8 +202,8 @@ Notes:
 
         c = getchar() 
         
-      evaluates to the return value of `getchar()` and
-      has the same type as `c`.
+      evaluates to the return value of ``getchar()`` and
+      has the same type as ``c``.
       And since the evaluation is done right to left
       this make this kind of expressions possible:
 
@@ -213,7 +213,7 @@ Notes:
 
     * This is the first time we are exposed to error handling in C. 
       Usually functions return a special value when an error occur,
-      for example `getchar()` return `EOF`.
+      for example ``getchar()`` return ``EOF``.
       If we want to make a function call such as:
 
       .. code-block:: c
@@ -243,7 +243,7 @@ Notes:
 
         c = (getchar() != EOF);
       
-      (`c` is either `0` or `1`) 
+      (``c`` is either ``0`` or ``1``) 
 
     .. note::
         From this exercise onwards, 
@@ -270,14 +270,14 @@ Compilation and run:
     value of EOF: -1
 
 Notes:
-    * We knew that `EOF` is an `int` (or can be casted to an `int`
+    * We knew that ``EOF`` is an ``int`` (or can be casted to an ``int``
       without problem) because it is used as
-      the error return value of functions that return `int`.
+      the error return value of functions that return ``int``.
 
-    * Notice we do not check for errors with `printf`.
+    * Notice we do not check for errors with ``printf``.
       In general, it is common practice to not check for errors 
       when the the purpose of the function is to write to stdout
-      (`putchar`, `printf`, ...)
+      (``putchar``, ``printf``, ...)
 
 .. note::
 
@@ -512,7 +512,7 @@ Notes:
     * The most common single-byte character encoding is 
       `ASCII <https://theasciicode.com.ar/>`_. However, 
       this code will work no matter the character encoding
-      used, even if there were negative `c` values 
+      used, even if there were negative ``c`` values 
       representing valid characters. We are making use of the 
       fact that *negative numbers in a*
       `two's-complement representation <https://en.wikipedia.org/wiki/Two's_complement>`_ 
@@ -520,7 +520,7 @@ Notes:
       unsigned representation*.
     * We only print "printable" characters 
       (excluding space). 
-      The function `isprint` from `<ctype.h>`
+      The function ``isprint`` from ``<ctype.h>``
       determines if a character is printable. 
       (page 249 K&R)
  
@@ -567,7 +567,7 @@ Notes:
 
 .. note::
 
-    `main` is a function like any other, so it may return a
+    ``main`` is a function like any other, so it may return a
     a value to its caller 
     (the environment in which the  program was executed). 
     From this exercise onwards,
@@ -600,12 +600,12 @@ Compilation and run:
 
 Notes:
 
-    * We have changed the name of `getname` to `mygetname` because
-      there is a previous declaration of `getline` in `<stdio>`. 
+    * We have changed the name of ``getname`` to ``mygetname`` because
+      there is a previous declaration of ``getline`` in ``<stdio>``. 
 
-..  talk about short circuiting of && and || and how the order of 
-    evaluation is not specified for  other operators including 
-    function arguments.
+..  talk about short circuiting for operators ``&&``, ``||`` and  how the order of 
+    evaluation is not specified for  other operators like function arguments 
+    (except ``,`` operator) 
 
 Exercise 1-17
 -------------
@@ -630,9 +630,9 @@ Compilation and run:
 
 Notes:
 
-    * This exercise is easy after we defined the function `mygetline` in the previous solution
+    * This exercise is easy after we defined the function ``mygetline`` in the previous solution
       (this is the purpose of well defined functions). Instead of that, we used this exercise
-      to learn how to use `getline` function from stdlib. To fully understand this function
+      to learn how to use ``getline`` function from stdlib. To fully understand this function
       we need to know pointers and memory allocation which are explained in :ref:`chapter-5`.
       Meanwhile we are gonna use this structure: 
 
@@ -650,9 +650,9 @@ Notes:
         }
         free(s);
 
-      knowing that  `len` is the number of character read including '\\n', 
-      `s` is where the string is saved, and `n` is not used for anything.
-      Calling `free` function is mandatory which is declared in `<stdlib.h>`.
+      knowing that  ``len`` is the number of character read including ``\n``, 
+      ``s`` is where the string is saved, and ``n`` is not used for anything.
+      Calling ``free`` function is mandatory which is declared in ``<stdlib.h>``.
 
 
 .. _exercise-1_18:
@@ -678,7 +678,7 @@ Compilation and run:
 
 Notes:
 
-    * We could have modified the function `mygetline` from 
+    * We could have modified the function ``mygetline`` from 
       :ref:`exercise-1_16` to achieve the functionality we wanted. 
       However, that would make the code less modular, so instead 
       we differentiate between *get the line* logic
@@ -706,9 +706,9 @@ Compilation and run:
 
 Notes:
 
-    * We make use of `stripline` from :ref:`exercise-1_18` 
+    * We make use of ``stripline`` from :ref:`exercise-1_18` 
       to get the lines without trailing blanks, tabs and newlines. 
-      This way `reverse` function logic is only about reversing
+      This way ``reverse`` function logic is only about reversing
       the string.
     * Notice that we do not use an auxiliary char array
       to reverse the string, making it more memory efficient
@@ -826,16 +826,16 @@ Notes:
 
     * We make use of the structure of the previous
       solution 1-23. We just check the balance of the
-      separators with `check_separators` whenever we are outside
+      separators with ``check_separators`` whenever we are outside
       strings, constant characters and comments.
     * A `stack data structure <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>`_
-      is implemented with `separatorstack` and `pos` global
-      variables and `pushsep` and `popsep` functions. Due to
+      is implemented with ``separatorstack`` and ``pos`` global
+      variables and ``pushsep`` and ``popsep`` functions. Due to
       its features, its the best data structure to check for
       unbalanced separators.
     * This is the first exercise where we use global variables.
       Until now, variables were local; they are defined inside
-      a block `{}`, they came into existence
+      a block ``{}``, they came into existence
       only when the block is entered and dissapear when the
       block is exited. Global variables are defined outside
       any block, can be used in any block (previous declaration)
@@ -854,11 +854,15 @@ Notes:
     **Declaration** just tell the compiler that the variable exist
     and its type (as many declaration as needed per variable).
 
-    *Local variables* are defined at the beginning of a block 
-    and they do not need to be declared since
-    their usage is always within the definition scope.
+    *Local variables* are defined and declared once inside a block 
+    and its scope is the block and all its inner blocks. 
+    A tentative redefinition in a inner block creates a new different 
+    local variable with the same name, 
+    ending the scope of the previous one for that inner block.
 
     *Global variables* are defined outside any block and they
     need to be declared if they are used in a block outside
-    the definition scope 
-    (usage before its definition or usage in other file).
+    its definition scope 
+    (usage before its definition in the same file 
+    or usage in other file).
+    This is the same behaviour as functions.

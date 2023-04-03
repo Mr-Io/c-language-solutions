@@ -56,17 +56,17 @@ Notes:
       "special casts" without changing the bit pattern
       of the variable:
         
-        * `uint2float()` cast from `unsigned int` to `float`.
-        * `uint2double()` cast from `long unsigned int` to `double`.
+        * ``uint2float()`` cast from ``unsigned int`` to ``float``.
+        * ``uint2double()`` cast from ``long unsigned int`` to ``double``.
 
       We are not suppose to know how those 2 functions
-      works until we see `unions` in :ref:`chapter-6`
+      works until we see ``union`` in :ref:`chapter-6`
       (another way to do it would be using pointers which are
       explained in :ref:`chapter-5`).
 
     * Notice that the direct computation of 
       the minimum floating-point number 
-      of `float` and `double` give different results than
+      of ``float`` and ``double`` give different results than
       the standard headers.
       This is because we have computed the smaller floating-point
       number that we can use before underflowing to 0, while 
@@ -92,13 +92,13 @@ Compilation and run:
   
 Notes:
 
-  * We have used the qualifier `const` for the first time:
+  * We have used the qualifier ``const`` for the first time:
      
     .. code-block :: c
 
       	const int lim = MAXLINE;
 
-    It simply indicates that the value of `lim` will not 
+    It simply indicates that the value of ``lim`` will not 
     be changed. The compiler makes an
     error if you try to modify a read-only variable. 
     You should initialize
@@ -108,7 +108,7 @@ Notes:
 
 .. note:: 
 
-    `const` can be applied to variables to specify that its value
+    ``const`` can be applied to variables to specify that its value
     will not be changed during its lifetime. 
     When applied to an array, it indicates that its elements will
     not be altered:
@@ -127,7 +127,7 @@ Notes:
       long unsigned strnlen(const char s[], long unsigned n);
 
     From this exercise onwards,
-    we will make use of the `const` qualifier when a variable
+    we will make use of the ``const`` qualifier when a variable
     should remain constant. 
 
 ..  add info about initialization of 
@@ -165,7 +165,7 @@ Compilation and run:
 
 Notes:
 
-  * We make use of `getword` function from :ref:`exercise-1_22` 
+  * We make use of ``getword`` function from :ref:`exercise-1_22` 
     for outputing.
 
 ..  add info about type conversion, casting
@@ -240,10 +240,10 @@ Compilation and run:
 
 Notes:
 
-  * For position `p` we start counting from the right
-    (being the rightmost position `0`), as it is done 
+  * For position ``p`` we start counting from the right
+    (being the rightmost position ``0``), as it is done 
     with the code example of Section 2.9 K&R.
-  * It is good practice to use `unsigned` when manipulating bits 
+  * It is good practice to use ``unsigned`` when manipulating bits 
     because rightshifting negative values is 
     implementation-defined. For example:
     
@@ -252,7 +252,7 @@ Notes:
       a >> n;
 
     may have different results with different compilers
-    when `a` is negative.
+    when ``a`` is negative.
 
 Exercise 2-7
 ------------

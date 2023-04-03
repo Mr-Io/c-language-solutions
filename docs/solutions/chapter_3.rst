@@ -20,12 +20,12 @@ Compilation and run:
 
 Notes:
 
-    * We use `clock` function from `<stdlib>` to give an approximate 
+    * We use ``clock`` function from ``<stdlib>`` to give an approximate 
       measure of CPU time (in clock ticks) used for
-      `binsearch` and `binsearch1test` functions.
-    * `binsearch1test` is ~1.4x faster than `binsearch`. This suggest
+      ``binsearch`` and ``binsearch1test`` functions.
+    * ``binsearch1test`` is ~1.4x faster than ``binsearch``. This suggest
       that the compiler cannot predict very accurately 
-      that the last branch of `if-else` statement in `binsearch` is
+      that the last branch of `if-else` statement in ``binsearch`` is
       only hit once per call at most. So it may cause some 
       missprediction penalty, increasing the CPU time. 
       This can be researched further; 
@@ -71,8 +71,38 @@ Compilation and run:
 
 Notes:
 
-    * Notice that, while we do not need to define the size of `t`
-      because it is allocated by `getline` function,
-      we do need to define the size of array `s` 
+    * Notice that, while we do not need to define the size of ``t``
+      because it is allocated by ``getline`` function,
+      we do need to define the size of array ``s`` 
       (dynamic memory allocation is not used until solutions
       of :ref:`chapter-5`)
+
+Exercise 3-3
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_3/exercise-3_03/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc - pg main.c
+    $ ./a.out
+    Normal usage: a-z k-p 0-9 1-4
+    Normal usage: abcdefghijklmnopqrstuvwxyz klmnop 0123456789 1234
+    Some things that should not convert: d-c a-4 3-1 b-9 a-Z a--z -z 
+    Some things that should not convert: d-c a-4 3-1 b-9 a-Z a--z -z 
+    Interesting case: a-z0-9      
+    Interesting case: abcdefghijklmnopqrstuvwxyz0123456789
+    Interesting cases: -a-d- -4-5- a-b-c-d
+    Interesting cases: -abcd- -45- abcd
+
+Notes:
+
+    * We have add an additional parameter to the original ``expand`` declaration
+      to specify ``s2`` size and avoid buffer overflowing, 
+      since it is not possible to know a priori how much
+      the string ``s1`` will be expanded. 

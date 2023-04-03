@@ -31,8 +31,7 @@ designed a series of exercises on each chapter to help reinforce its knowledge.
 The exercises of the book are solved 
 staying true to comtemporary K&R C style 
 while 
-applying modern coding principles 
-so that a compiler can generate optimized code. 
+applying modern coding practices.
 
 This repository is just a tribute to K&R. 
 
@@ -74,25 +73,47 @@ so we will allow ourselves certain liberties and
 follow some modern "good practices":
   * Prefer slightly more descriptive names than K&R. 
   * Use braces even when C permits them to be omitted.
-  * Prefer subscriptor `[]` rather than the use of pointer 
+  * Prefer subscriptor ``[]`` rather than the use of pointer 
     arithmetics.
-  * Avoid the use of `typedef`.
+  * Avoid the use of ``typedef``.
 
 .. end-cstyle
+
+Unsafe Functions
+~~~~~~~~~~~~~~~~
+
+.. ini-unsafe
+
+In the solutions, the following unsafe functions are avoided:
+  * ``gets``, ``getwd``
+  * ``strcpy``, ``strcat``, ``sprintf`` 
+
+And the following functions must specify a maximun field width 
+when formatting string input:
+  *  ``scanf``, ``fscanf``, ``vscanf``, ``vfscanf``
+
+.. end-unsafe
+
+
+Check `unsafe functions docs`_ 
+for a more extensive explanation of unsafe functions.
+
+.. _unsafe functions docs: https://clanguage.solutions/#unsafe-functions
+
 
 C Code optimization
 -------------------
 We optimize the code of the solutions as much as we can
-as long as we do not reduce code readability. 
-For that, we use appropiate data structures and alrgorithms and
-follow these 3 coding principles:
+as long as we do not compromise code readability. 
+The solutions use appropiate data structures and algorithms for
+the particular problem. 
+
+Additionaly, the solutions follow these 3 coding practices: 
   * *Minimize function calls (and any computation) in loops*
   * *Minimize pointer derefencing (including subscript operator) in loops*
-  * *Declare struct members of the same type together*
+  * *Group struct members of the same type together*
 
-A more extensive explanation of C optimization within the
-code of the solutions 
-can be found in `C optimization docs`_.
+Check `C optimization docs`_ for a more extensive explanation. 
 
 .. _C optimization docs: https://clanguage.solutions/#c-code-optimization
 
