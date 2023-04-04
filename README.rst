@@ -2,12 +2,20 @@ Solutions to The C Programming Language - 2nd Edition
 =====================================================
 .. ini-badges
 
-.. todo: add shields (status bars (travis), code style, tech/framework used, license, version, test coverage…)
+.. todo: add shields (status bars (travis), code style, tech/framework used, test coverage…)
 
-|generic shield|
+.. image:: https://img.shields.io/badge/language-C17-blue
+  :target: https://en.cppreference.com/w/cpp/17
 
-.. |generic shield| image:: https://img.shields.io/badge/shields-todo.svg
-    :target: https://shields.io/
+.. image:: https://img.shields.io/badge/compiler-gcc-orange
+  :target: https://gcc.gnu.org/
+
+.. image:: https://img.shields.io/netlify/d704dae8-20ba-4fe2-9dba-0c3564ef402e
+  :target: https://clanguage.solutions/
+
+.. image:: https://img.shields.io/github/license/Mr-Io/c-language-solutions
+  :target: https://choosealicense.com/licenses/mit/
+
 
 .. end-badges
 
@@ -43,6 +51,7 @@ This repository is just a tribute to K&R.
 .. ini-links
 
 The solutions are provided in 2 forms and you may be interested in one or both of them:
+
   * `solutions`_: If you just want to read the code.
   * `documentation`_: If you want to read the solutions in a "book-style" fashion 
     were each exercise and solution is commented, compiled and executed.
@@ -71,6 +80,7 @@ which is known as *K&R style*.
 However, in certain situations it became overly terse, 
 so we will allow ourselves certain liberties and 
 follow some modern "good practices":
+
   * Prefer slightly more descriptive names than K&R. 
   * Use braces even when C permits them to be omitted.
   * Prefer subscriptor ``[]`` rather than the use of pointer 
@@ -84,12 +94,14 @@ Unsafe Functions
 
 .. ini-unsafe
 
-In the solutions, the following unsafe functions are avoided:
+In the solutions, the following unsafe functions are forbidden:
+
   * ``gets``, ``getwd``
   * ``strcpy``, ``strcat``, ``sprintf`` 
 
 And the following functions must specify a maximun field width 
 when formatting string input:
+
   *  ``scanf``, ``fscanf``, ``vscanf``, ``vfscanf``
 
 .. end-unsafe

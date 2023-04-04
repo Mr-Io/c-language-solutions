@@ -848,19 +848,37 @@ Notes:
 
  .. note::
 
-    **Definition** is where memory is set aside for the variable
-    (only once per variable).
+    **Definition** is where memory is set aside for the variable.
 
     **Declaration** just tell the compiler that the variable exist
-    and its type (as many declaration as needed per variable).
+    so that it can be used.
 
-    *Local variables* are defined and declared once inside a block 
-    and its scope is the block and all its inner blocks. 
+    *Local variables* are always defined, they cannot be only declared.
+
+    *Global variables* are declared using ``extern`` keyword.
+
+    For *Functions*, if it does not include the function body ``{}`` 
+    is a funcion declaration, otherwise is a function definition.
+
+ .. note::
+
+    **One Definition Rule**: One and only one definition of every function 
+    or variable is required to appear in the entire program 
+    (multiple declarations are allowed though)
+
+
+
+.. scope 
+
+    scope refer to where a variable/function can be used (with or without needing
+    a declaration) depending on where and how it was defined.
+
+    local variablle scope is the block where they are defined and all its inner blocks. 
     A tentative redefinition in a inner block creates a new different 
     local variable with the same name, 
     ending the scope of the previous one for that inner block.
 
-    *Global variables* are defined outside any block and they
+    defined outside any block and they
     need to be declared if they are used in a block outside
     its definition scope 
     (usage before its definition in the same file 

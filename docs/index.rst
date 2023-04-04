@@ -47,6 +47,7 @@ For example:
   
     Modern compiler and OS implement techniques to prevent
     buffer overflow attacks:
+    
       * Stack randomization 
         (although brute force is still possible)
       * Limiting executable code regions 
@@ -98,7 +99,7 @@ while reading and doing the exercises.
 
 *Level 1 optimization is not relevant for this repository*.
    
-Level 2 optimization involve some code principles so that 
+Level 2 optimization involve code principles so that 
 the compiler can generate efficient code. 
 **The solutions follow these 3 coding practices**:
 
