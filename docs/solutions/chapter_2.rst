@@ -43,14 +43,6 @@ Compilation and run:
 
 Notes:
 
-    * In order to determine the ranges by direct computation 
-      it is necessary to know the bit representation of the different
-      data types.
-      Some useful references are 
-      `Unsigned and Signed Encodings <https://onlinetoolz.net/unsigned-signed>`_,
-      `Two's-Complement Encodings <https://en.wikipedia.org/wiki/Two's_complement>`_ and
-      `IEEE Floating-Point Representation <https://www.h-schmidt.net/FloatConverter/IEEE754.html>`_. 
-
     * Since casting between integer and floats change the bit 
       patterns of the variable, we defined 2 functions that do
       "special casts" without changing the bit pattern
@@ -72,6 +64,13 @@ Notes:
       number that we can use before underflowing to 0, while 
       the standard header only defines the smallest *normalized* 
       floating-point number. 
+    
+Useful References:
+
+    * `Unsigned and Signed Encodings <https://onlinetoolz.net/unsigned-signed>`_
+    * `Two's-Complement Encodings <https://en.wikipedia.org/wiki/Two's_complement>`_
+    * `IEEE Floating-Point Representation <https://www.h-schmidt.net/FloatConverter/IEEE754.html>`_
+
 
 Exercise 2-2
 ------------

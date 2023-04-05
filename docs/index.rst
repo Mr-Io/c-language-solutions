@@ -21,10 +21,10 @@ to `buffer overflow`_ attacks.
 If you go to the `man pages`_ (as you should
 whenever you use a function) there is a warning if the particular
 function is unsafe (for example the first phrase in ``gets``
-is literally "`Never use this function`_" ) but there are others
+description section is literally "`Never use this function`_" ) but there are others
 that may be vulnerable and have no warning whatsoever,
 for example the seemingly correct ``scanf("%s", s)`` is also
-vulnerable to buffer overflow.
+vulnerable to buffer overflow and there is no warining on scanf man pages.
 
 .. _buffer overflow: https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
 .. _man pages: https://man7.org/linux/man-pages/man1/man.1.html
@@ -58,7 +58,7 @@ For example:
         use it for ``scanf`` but not for ``gets``)
 
     Even if buffer overflow attacks were impossible to mount
-    it is still a bug, so its better to just avoid it. 
+    (it is not) it is still a bug, so its better to just avoid it. 
 
 .. include:: ../README.rst
     :start-after: ini-comp

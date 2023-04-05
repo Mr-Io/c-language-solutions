@@ -435,7 +435,7 @@ Compilation and run:
 
 Notes:
     * In C, all elements of an array has the same type and the
-      array size never changes during the array lifetime. Before
+      array size never changes during its lifetime. Before
       C99, the array must be of constant fixed size 
       but since C99 the array size can be an integer expression
       evaluated everytime the array is allocated. 
@@ -684,6 +684,8 @@ Notes:
       we differentiate between *get the line* logic
       and *strip the line* logic in 2 different functions, each of them
       *does one thing and does it well*.
+
+.. _exercise-1_19:
 
 Exercise 1-19
 -------------

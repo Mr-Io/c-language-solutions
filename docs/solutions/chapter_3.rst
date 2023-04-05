@@ -102,7 +102,143 @@ Compilation and run:
 
 Notes:
 
-    * We have add an additional parameter to the original ``expand`` declaration
+    * We added an additional parameter to the original ``expand`` declaration
       to specify ``s2`` size and avoid buffer overflowing, 
       since it is not possible to know a priori how much
       the string ``s1`` will be expanded. 
+
+.. _exercise-3_04:
+
+Exercise 3-4
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_3/exercise-3_04/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc - pg main.c
+    $ ./a.out
+    1234
+    1234
+    -4321
+    -4321
+    -2147483648
+    -2147483648
+
+Notes:
+
+    * The largest negative number cannot be handled in the book 
+      version of ``itoa`` because  ``n = -n;`` fail; 
+      there is no positive representation of it
+      (``abs(INT_MAX) < abs(INT_MIN)``).
+      We convert any negative value into a positive one 
+      by bit manipulation instead of using the unary ``-`` operator. 
+      We use ``unsigned`` type to manipulate bits, knowing
+      that every absolute value of an integer 
+      in a two's complement representation can be represented in 
+      an unsigned representation.
+    * Notice that the maximum lenght of ``s`` 
+      is not an aleatory number;
+      we use the maximum string length of an integer of at 
+      least 8 bytes in a 2 complement representation
+      (2**63 has 20 digits including ``-``).
+      More precise would have been 
+      to take into account the byte length
+      of an ``int`` type using ``sizeof`` 
+      and to calculate the maximum number of digits.
+    * We reuse ``reverse`` function from :ref:`exercise-1_19`.
+
+.. scanf behaviour when input int is too large? Undefined.
+   scanf cannot be reliable used for the purpose of input validation.
+
+Useful References:
+
+    * `Unsigned and Signed Encodings`_ 
+    * `Two's-Complement Encodings`_
+
+
+Exercise 3-5
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_3/exercise-3_05/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc - pg main.c
+    $ ./a.out
+    15 16
+    F
+    15 2
+    1111
+    2147483647 2
+    1111111111111111111111111111111
+    28 28
+    10
+    27 28
+    R
+    111 -3
+    error itob: invalid base (-3)
+
+
+Notes:
+
+    * We use the same estructure as 
+      :ref:`exercise-3_04`. One important difference between 
+      ``itoa`` and ``itob`` is that the former return
+      an ``int`` to report errors to the caller. 
+
+Useful References:
+
+    * `Unsigned and Signed Encodings`_ 
+    * `Two's-Complement Encodings`_ 
+
+Exercise 3-6
+------------
+*main.c*
+
+.. literalinclude :: ../../solutions/chapter_3/exercise-3_06/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block :: console
+
+    $ gcc - pg main.c
+    $ ./a.out
+    t 
+    1234 1
+    1234
+    1234 5
+     1234
+    -123 5
+     -123
+    -2147483648 15
+        -2147483648
+    12345 999
+    error itoa: 999 too big (max. width: 100)
+
+Notes:
+
+    * We use the code of :ref:`exercise-3_04` 
+      and instead of modifying ``itoa`` we make a wrapper function
+      ``itoa_v2``.
+
+Useful References:
+
+    * `Unsigned and Signed Encodings`_ 
+    * `Two's-Complement Encodings`_ 
+
+
+.. _Two's-Complement Encodings: https://en.wikipedia.org/wiki/Two's_complement
+.. _Unsigned and Signed Encodings: https://onlinetoolz.net/unsigned-signed 

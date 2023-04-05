@@ -133,12 +133,16 @@ Check `C optimization docs`_ for a more extensive explanation.
 
 Compiler, C version and OS
 --------------------------
-Currently, there are many `ISO versions of C <https://stackoverflow.com/a/17209532/13695519>`_.
-In this repository **the code is compiled using C17**.
+Currently, there are many `ISO versions of C`_,
+in this repository **the code is compiled using
+C18 with GNU-specific extensions** (-std=gnu18), 
+which is the default in gcc.
 Anyway, the code will compile just fine in any C ISO
 and, my recommendation is just to
 use the C version that your compiler uses by default
 (which is generally the newest one).
+
+.. _ISO versions of C: https://www.iso-9899.info/wiki/The_Standard
 
 Regarding compilers, the 2 most popular ones for C are 
 `GCC <https://gcc.gnu.org/>`_
