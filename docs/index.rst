@@ -24,7 +24,7 @@ function is unsafe (for example the first phrase in ``gets``
 description section is literally "`Never use this function`_" ) but there are others
 that may be vulnerable and have no warning whatsoever,
 for example the seemingly correct ``scanf("%s", s)`` is also
-vulnerable to buffer overflow and there is no warining on scanf man pages.
+vulnerable to buffer overflow and there is no warning on scanf man pages.
 
 .. _buffer overflow: https://owasp.org/www-community/vulnerabilities/Buffer_Overflow
 .. _man pages: https://man7.org/linux/man-pages/man1/man.1.html
@@ -75,7 +75,7 @@ then to be readable and modular
 (`DRY`_ - Dont Repeat Yourself, easy maintenance, etc... )
 and lastly to be efficient and fast.
 
-.. _DRY: <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>
+.. _DRY: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 
 We resume optimization in 4 levels:
    * **Level 0**: Use appropiate data structures and algorithms. 

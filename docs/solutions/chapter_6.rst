@@ -2,4 +2,7 @@
 
 Chapter 6
 =========
-Work in Progress.
+The documentation is not complete, but the solution
+code of the exercises can be consulted here:
+
+https://github.com/Mr-Io/c-language-solutions/tree/master/solutions/chapter_6

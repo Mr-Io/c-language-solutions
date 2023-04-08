@@ -13,7 +13,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     binsearch:        1062 clock ticks 
     binsearch1test:    777 clock ticks 
@@ -63,7 +63,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     \Difficult      subjects cannot be described    with light prose
     \\Difficult\tsubjects cannot be described\twith light prose\n
@@ -89,7 +89,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     Normal usage: a-z k-p 0-9 1-4
     Normal usage: abcdefghijklmnopqrstuvwxyz klmnop 0123456789 1234
@@ -121,7 +121,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     1234
     1234
@@ -174,7 +174,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     15 16
     F
@@ -194,7 +194,7 @@ Notes:
 
     * We use the same estructure as 
       :ref:`exercise-3_04`. One important difference between 
-      ``itoa`` and ``itob`` is that the former return
+      ``itoa`` and ``itob`` is that ``itob`` return
       an ``int`` to report errors to the caller. 
 
 Useful References:
@@ -214,7 +214,7 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc - pg main.c
+    $ gcc main.c
     $ ./a.out
     t 
     1234 1

@@ -201,6 +201,11 @@ Here is a list of topics that are perfect to start with:
     * optimize using coding principles
     * etc... 
 
+.. todos: 
+    consider -ftrapv when compiling, this abort at run time
+    if the processor detects any *integer* arithmetic overflow
+    instead of continuing executing.
+
   * Use 
     `Sphinx <https://www.sphinx-doc.org/en/master/>`_
     to build the web and documentation 
