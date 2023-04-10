@@ -310,13 +310,11 @@ Notes:
       we can get rid of them and of the whole *myio* module 
       (*myio.h* and *myio.c*).
 
-
-
-Exercise 4-12, 4-13
--------------------
+Exercise 4-12
+-------------
 *main.c*
 
-.. literalinclude:: ../../solutions/chapter_4/exercise-4_12_13/main.c
+.. literalinclude:: ../../solutions/chapter_4/exercise-4_12/main.c
     :language: c
     :tab-width: 4
 
@@ -326,6 +324,47 @@ Compilation and run:
 
     $ gcc main.c
     $ ./a.out
+    1234
+    1234
+    -1234
+    -1234
+  
+Notes:
+
+    * Refer to :ref:`exercise-3_04` to understand why we use
+      bitwise operators to handle negative numbers and to understand
+      why we dont need to implement buffer overflow control even
+      when ``CINTLEN`` is just 20.
+
+.. todo: talk about recursion, leap of faith and
+          outperformance of iterative solutions.
+          (recursion is even considered a code smell - references -)
+
+
+Exercise 4-13
+-------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_4/exercise-4_13/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc main.c
+    $ ./a.out
+    Hello!
+    !olleH
+    Is this working fine??
+    ??enif gnikrow siht sI
+
+Notes:
+
+    * We used getline from standard library to read lines from input,
+      see notes on :ref:`exercise-1_17` to remember its usage.
+
 
 
 

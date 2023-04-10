@@ -118,4 +118,5 @@ int main()
 			break;
 		}
 	}
+	/* we should free memory allocated with getline in myio.c here */
 }

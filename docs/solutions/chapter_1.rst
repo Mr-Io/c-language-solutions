@@ -607,6 +607,8 @@ Notes:
     evaluation is not specified for  other operators like function arguments 
     (except ``,`` operator) 
 
+.. _exercise-1_17:
+
 Exercise 1-17
 -------------
 *main.c*
@@ -645,6 +647,8 @@ Notes:
         int len;
         long unsigned n;
 
+        s = NULL;
+        n = 0;
         while((len = getline(&s, &n, stdin)) > 0){
            /* ... */
         }
