@@ -89,6 +89,23 @@ Notes:
 
 Exercises 4-3, 4-4, 4-5, 4-6
 ----------------------------
+
+.. todo: How to do bigger C programs?
+  A PROGRAM IS JUST A DEFINITION OF VARIABLES AND FUNCTIONS!
+  - linking explained: 
+    - types of variables and scope, "the scope of X is from its point of definition to the end of the source file being compiled"
+      (nonstatic global variables and nonstatic functions in particular)
+    - types of variables and initialization
+    - One Definition Rules
+    - types of files: source, preprocessor, assembly, objects, executables, static libraries and shared libraries (linking on compile, on load and on runtime)
+    - linkers DO NOT CHECK TYPES of shared symbols -> rely on headers. 
+    - tie declarations together using modules (source + header files). header guards.
+    - do not use register keyword, the compiler is better than you and it simply ignore it
+    - inline functions instead of macros
+  - system calls, fork/execv and signals -> SHELL
+
+
+
 *main.c*
 
 .. literalinclude:: ../../solutions/chapter_4/exercise-4_03-07/main.c
@@ -155,8 +172,6 @@ Exercises 4-3, 4-4, 4-5, 4-6
   ``getword``, ``isnumber``, ``ismath`` and ``isvar`` 
   since those are intended for internal use only.
 
-.. todo: note about what to include in header files
-
 *stack.h*
 
 .. literalinclude:: ../../solutions/chapter_4/exercise-4_03-07/stack.h
@@ -212,8 +227,64 @@ Compilation and run:
 
 .. code-block :: console
 
-    $ gcc main.c variables.c tokenizer.c myio.c stack.c
+    $ gcc main.c variables.c tokenizer.c myio.c stack.c -lm
     $ ./a.out
+    12 34 -22
+    2: 12.000000
+    1: 34.000000
+    0: -22.000000
+    > 2 2 +
+    3: 12.000000
+    2: 34.000000
+    1: -22.000000
+    0: 4.000000
+    > 3 -
+    3: 12.000000
+    2: 34.000000
+    1: -22.000000
+    0: 1.000000
+    > +
+    2: 12.000000
+    1: 34.000000
+    0: -21.000000
+    > dup
+    3: 12.000000
+    2: 34.000000
+    1: -21.000000
+    0: -21.000000
+    > exp
+    3: 12.000000
+    2: 34.000000
+    1: -21.000000
+    0: 0.000000
+    > del
+    2: 12.000000
+    1: 34.000000
+    0: -21.000000
+    > a
+    (a=-21.0) 
+    1: 12.000000
+    0: 34.000000
+    > b
+    (a=-21.0, b=34.0) 
+    0: 12.000000
+    > a b +
+    (a=-21.0, b=34.0) 
+    1: 12.000000
+    0: 13.000000
+    > b pow
+    (a=-21.0, b=34.0) 
+    1: 12.000000
+    0: 74829695578286079398588608906795155456.000000
+    > swp
+    error: Invalid input 'swp'
+    > swap
+    (a=-21.0, b=34.0) 
+    1: 74829695578286079398588608906795155456.000000
+    0: 12.000000
+    > clear
+    (a=-21.0, b=34.0) 
+    >
 
 .. _exercise-4_08:
 
@@ -365,9 +436,6 @@ Notes:
     * We used getline from standard library to read lines from input,
       see notes on :ref:`exercise-1_17` to remember its usage.
 
-
-
-
 Exercise 4-14
 -------------
 *main.c*
@@ -382,4 +450,9 @@ Compilation and run:
 
     $ gcc main.c
     $ ./a.out
+    1 2
+    2 1
+    123 -44
+    -44 123
+
 

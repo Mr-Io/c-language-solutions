@@ -6,14 +6,14 @@
 						}
 int main()
 {
-	int x = 1;
-	int y = 10;
+	int x;
+	int y;
 
-	printf("x=%d\n", x);
-	printf("y=%d\n", y);
-	swap(int, x, y);
-	printf("x=%d\n", x);
-	printf("y=%d\n", y);
+	while(scanf("%d %d", &x, &y)){
+		swap(int, x, y);
+		printf("%d %d\n", x, y);
+
+	}
 
 	return 0;
 }
