@@ -177,7 +177,12 @@ Therefore, only in very specific applications are used.
 
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
 
-   solutions/index
+    solutions/index
+
+.. toctree::
+    :maxdepth: 1
+
+    next
 
