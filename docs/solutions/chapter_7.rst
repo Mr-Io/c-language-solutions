@@ -1,3 +1,5 @@
+.. _chapter-7:
+
 Chapter 7
 =========
 The documentation is not complete, but the solution

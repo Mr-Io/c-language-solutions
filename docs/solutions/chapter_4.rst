@@ -92,6 +92,11 @@ Exercises 4-3, 4-4, 4-5, 4-6
 
 .. todo: How to do bigger C programs?
   A PROGRAM IS JUST A DEFINITION OF VARIABLES AND FUNCTIONS!
+  - header files
+    - never compiled directly, always included by the preprocessor
+    - no definitions whatsoever (except struct type definitions: explain)
+    - header guards (just because struct type definitions)
+    - recompilation of all the files that depends on an included file when it is modified
   - linking explained: 
     - types of variables and scope, "the scope of X is from its point of definition to the end of the source file being compiled"
       (nonstatic global variables and nonstatic functions in particular)
@@ -100,7 +105,7 @@ Exercises 4-3, 4-4, 4-5, 4-6
     - types of files: source, preprocessor, assembly, objects, executables, static libraries and shared libraries (linking on compile, on load and on runtime)
     - linkers DO NOT CHECK TYPES of shared symbols -> rely on headers. 
     - tie declarations together using modules (source + header files). header guards.
-    - do not use register keyword, the compiler is better than you and it simply ignore it
+    - do not use register keyword, the compiler is better than you and it simply ignore it (also u cant use '&' operator on a register variable)
     - inline functions instead of macros
   - system calls, fork/execv and signals -> SHELL
 
@@ -454,5 +459,7 @@ Compilation and run:
     2 1
     123 -44
     -44 123
+
+.. todo: informa about the modern uses of the preprocessor (headers guards, inline functions...)
 
 

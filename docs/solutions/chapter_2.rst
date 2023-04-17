@@ -1,6 +1,9 @@
 Chapter 2 
 =========
 
+.. todo: talk about the 4 basic types: char, int, float and double
+         and the 4 derived types: array, pointer, struct and union.
+
 Exercise 2-1
 ------------
 *main.c*
@@ -129,11 +132,13 @@ Notes:
     we will make use of the ``const`` qualifier when a variable
     should remain constant. 
 
-..  add info about initialization of 
+.. todo: add info about modern practices and edge cases of the 'const' keyword
+
+..  todo: add info about initialization of 
     local, global and static variables and 
     keywork.
 
-..  inline functions: A reasonable rule of thumb is only use static inline 
+..  todo: inline functions: A reasonable rule of thumb is only use static inline 
     and for functions that have less than 3 lines of code in them.
     Prefer static inline functions to macros.
 

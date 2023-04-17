@@ -852,26 +852,28 @@ Notes:
       `side effects <https://en.wikipedia.org/wiki/Side_effect_(computer_science)>`_
       in functional programming.
 
- .. note::
-
-    **Definition** is where memory is set aside for the variable.
+.. note::
 
     **Declaration** just tell the compiler that the variable exist
-    so that it can be used.
+    so that it can be used. All variables and functions must be
+    declared before usage.
 
-    *Local variables* are always defined, they cannot be only declared.
+    **Definition** is where memory is set aside for the variable.
+    It also declares the variable to the compiler.
 
-    *Global variables* are declared using ``extern`` keyword.
-
-    For *Functions*, if it does not include the function body ``{}`` 
-    is a funcion declaration, otherwise is a function definition.
-
- .. note::
+.. note::
 
     **One Definition Rule**: One and only one definition of every function 
     or variable is required to appear in the entire program 
     (multiple declarations are allowed though)
 
+.. note::
+    *Local variables* are always defined, they cannot
+    be declared. 
+
+    *Global variables* may be declared using ``extern`` keyword.
+
+    *Functions* may be declared by ommiting its body ``{}``. 
 
 
 .. scope 
