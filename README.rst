@@ -83,8 +83,6 @@ follow some modern "good practices":
 
   * Prefer slightly more descriptive names than K&R. 
   * Use braces even when C permits them to be omitted.
-  * Prefer subscriptor ``[]`` rather than the use of pointer 
-    arithmetics.
   * Avoid the use of ``typedef``.
 
 .. end-cstyle

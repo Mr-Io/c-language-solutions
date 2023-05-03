@@ -23,24 +23,25 @@ int main()
 }
 
 /* 
-* Only `lim` characters are read but the total line lenght is returned.
-* \n is added to stripped lines and to and EOF line without \n
+* read a line from stdin and store it in buffer `s`
+* The total line is readed but at most `n` characters 
+* are stored in `s` including `\n` and the terminating '\0'.
+* The total length of the line readed is returned. 
 */
 int mygetline(char s[], int lim) 
 {
 	int c, i;
 
-	for (i = 0; i<lim-1 &&  (c = getchar()) != EOF && c != '\n'; ++i) {
+	for (i = 0; i<lim-2 &&  (c = getchar()) != EOF && c != '\n'; ++i) {
 		s[i] = c;
 	}
-	if (i == lim-1){
-		s[i-1] = '\n';
-	}else if (c == '\n' || (c == EOF && i > 0)){
+	if (c != EOF || i != 0){
 		s[i] = '\n';
 		++i;
 	}
 	s[i] = '\0';
-	while (c != EOF && c != '\n'){
+
+	while (c != EOF && c != '\n'){ /* Everylane has '\n' except EOF with 0 length */
 		c = getchar();
 		++i;
 	}
