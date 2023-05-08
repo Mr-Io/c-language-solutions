@@ -241,6 +241,67 @@ Notes:
       ``char *lines[]``, which is just the same as ``char **lines``
       (an array of pointers).
 
+.. _`exercise-5_08`:
+
+Exercise 5-8
+------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_08/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc main.c
+    $ ./a.out 
+    > year month day: 1991 6 19
+    day of year: 170
+    > year yearday: 1991 170
+    date: 19/06/1991
+    > year month day: 2023 13 5 
+    error day_of_year: wrong input
+
+Exercise 5-9
+------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_09/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc main.c
+    $ ./a.out 
+    > year month day: 1991 6 19
+    day of year: 170
+    > year yearday: 1991 170
+    date: 19/06/1991
+    > year yearday: 2025 400
+    error month_day: wrong input
+
+Notes:
+
+    * The solution is exactly the same as :ref:`exercise-5_08` but
+      we replace every subscriptor ``[]`` operator knowing that:
+
+      .. code-block:: c
+
+        a[b]
+    
+      is equivalent to:
+
+      .. code-block:: c
+
+        *(a + b)
+
+
+
 Rest of exercises
 -----------------
 
@@ -248,4 +309,3 @@ The documentation is not complete, but the solution
 code of the rest of the exercises can be consulted here:
 
 https://github.com/Mr-Io/c-language-solutions/tree/master/solutions/chapter_5
-
