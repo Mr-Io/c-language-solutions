@@ -161,6 +161,7 @@ Notes:
 
 .. _man pages: https://www.kernel.org/doc/man-pages/
 
+.. _exercise-5_06:
 
 Exercise 5-6
 ------------
@@ -174,7 +175,7 @@ Compilation and run:
 
 .. code-block:: console
 
-    $ gcc main.c
+    $ gcc main.c 
     $ ./a.out
     > 123.25 Hello there!
     > there
@@ -196,6 +197,49 @@ Notes:
       ``strindex`` is a rewrite of the one defined in K&R page 69.
       ``getop`` is a rewrite of the one defined in K&R page 78.
 
+Exercise 5-7
+------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_07/main.c
+    :language: c
+    :tab-width: 4
+
+The text input is from `sampletext.txt`_, we use redirection (``< sampletext.txt``)
+to use the contents of this file as standard input when executing the program.
+
+.. _`sampletext.txt`: https://www.gutenberg.org/cache/epub/1581/pg1581.txt
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc main.c
+    $ ./a.out < sampletext.txt
+    mode    clocktics       nº lines
+    ----    ---------       --------
+     sta         5028          32768
+     dyn         3061          32768
+
+Notes:
+
+    * ``mygetline`` is the same as the one in :ref:`exercise-5_06`.
+    * We use ``getline`` from standard library to fill an array of pointer.
+      We use ``mygetline`` to fill an array of arrays. 
+      The former case is  ~1.6 faster, 
+      this implies that ``getline`` from standard library
+      is more efficient than ``mygetline``, even when it allocates
+      memory dynamically. 
+    * Notice the difference in the first argument of ``readline_static``
+      and ``readline_dynamic``:
+
+        * ``char **lineptr`` is used to pass an array of pointers.
+        * ``char (*lines)[LINESIZE]`` is used to pass an array of arrays. 
+
+      The parentheses in ``char (*lines)[LINESIZE]`` are 
+      neccesary because ``char *lines[LINESIZE]`` is equivalent to 
+      ``char *lines[]``, which is just the same as ``char **lines``
+      (an array of pointers).
 
 Rest of exercises
 -----------------
