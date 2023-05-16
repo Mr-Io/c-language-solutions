@@ -8,7 +8,7 @@ int main()
 	int nb = 0;
 	int pos = 0;
 
-	while ((c=getchar()) != EOF){
+	while ((c = getchar()) != EOF){
 		if (c == ' '){
 			++nb;	
 		}else if (c == '\t'){

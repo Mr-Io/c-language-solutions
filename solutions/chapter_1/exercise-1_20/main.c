@@ -6,7 +6,7 @@ int main()
 	int c;
 	int pos = 0;
 
-	while ((c=getchar()) != EOF) {
+	while ((c = getchar()) != EOF) {
 		if (c == '\t') {
 			while (pos < TABLEN) {
 				putchar(' ');

@@ -632,10 +632,14 @@ Compilation and run:
 
 Notes:
 
-    * This exercise is easy after we defined the function ``mygetline`` in the previous solution
-      (this is the purpose of well defined functions). Instead of that, we used this exercise
-      to learn how to use ``getline`` function from stdlib. To fully understand this function
-      we need to know pointers and memory allocation which are explained in :ref:`chapter-5`.
+    * This exercise is easy after we defined the function ``mygetline`` 
+      in the previous solution 
+      (this is the purpose of well defined functions). 
+      Instead of that, we used this exercise to learn 
+      how to use ``getline`` function from stdlib. 
+      To fully understand this function we need to know pointers 
+      and dynamic memory allocation which are explained 
+      in :ref:`chapter-5` and :ref:`chapter-6` respectively.
       Meanwhile we are gonna use this structure: 
 
       .. code-block:: c

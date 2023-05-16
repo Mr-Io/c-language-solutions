@@ -1,9 +1,7 @@
-#ifndef STACK_FILE
-#define STACK_FILE
-
+/* return number on success and NAN on error */
 double pop(void);
-void push(double x);
-void clearstack(void);
-void printstack(void);
 
-#endif
+/* return 0 on success and -1 on error */
+int push(double x);
+
+

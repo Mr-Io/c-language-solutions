@@ -300,11 +300,196 @@ Notes:
 
         *(a + b)
 
+Exercise 5-9
+------------
+*main.c*
 
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_08/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc main.c
+    $ ./a.out 
+    > year month day: 1991 6 19
+    day of year: 170
+    > year yearday: 1991 170
+    date: 19/06/1991
+    > year month day: 2023 13 5 
+    error day_of_year: wrong input
+
+Exercise 5-10
+-------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_10/main.c
+    :language: c
+    :tab-width: 4
+
+*stack.h*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_10/stack.h
+    :language: c
+    :tab-width: 4
+
+*stack.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_10/stack.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc -o expr main.c stack.c
+    $ ./expr 2 3 4 + '*' 
+
+Notes:
+
+    * *stack.h* and *stack.c* are the same as :ref:`exercise-4_0307`
+      but with restricted functionality (only ``push`` and ``pop``).
+    * ``isnumber`` is the same as the one 
+      defined in :ref:`exercise-4_0307`, but we make use of the
+      ``const`` qualifier to indicate that its argument 
+      is read-only.
+    * In Linux shell, ``*`` is a glob that refer to all the files
+      in the current directory. Thus we need to use quotes ``'*'``
+      to indicate the ``*`` asterisk character as a command-line
+      argument.
+    * Notice also when running any executable file we preceed 
+      the file with ``./``, 
+      this is done to indicate to the shell that 
+      the program to execute is in the current directory 
+      and it is NOT a built-in command or an executable file
+      within some folder in a directory of the PATH 
+      environmental variable.
+
+.. note:: 
+
+    The most common implementation to pass command-line arguments 
+    *and environmental variables* to a program when it begin executing, 
+    is to use ``main`` arguments and/or the external environmental
+    variable ``environ``. 
+
+    ``main`` is defined as follow:
+
+    .. code-block:: c
+
+        int main(int argc, char **argv, char **envp)
+    
+    where both ``argv`` and ``envp`` are both 
+    NULL terminated arrays of pointer to strings.
+    ``argv`` has the command-line argument values 
+    (``argc`` just indicates its length) and 
+    ``envp`` has the environmental variables.
+
+    We can also access the environmental variables strings 
+    through the external global variable ``environ`` wich is also
+    a null-terminated array of strings 
+    with the environmental variables:
+
+    .. code-block:: c
+
+        extern char **environ;
+
+    ``environ`` has the advantage over ``envp`` that there is a set of 
+    functions from the standard library for reading and modifying the
+    environment: ``getenv``, ``setenv`` and ``unsetenv``.
+
+    Nowadays, ``environ`` is the recommended way to access and edit
+    environmental variables in a program. Moreover, while this is
+    widely supported:
+
+    .. code-block:: c
+
+        int main(int argc, char **argv, char **envp)
+
+    it is not guarantee to be present by the
+    C99 standard or POSIX. While this one:
+
+    .. code-block:: c
+
+        int main(int argc, char **argv)
+
+    is defined in the C99 standard.
+
+Exercise 5-11, 5-12
+-------------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_11_12/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc -o detab main.c
+    $ gcc -o entab main.c
+    $ ./detab 
+    This    line has        spaces and tabs intercalated    but the output will have        only spaces.
+    This    line has        spaces and tabs intercalated    but the output will have        only spaces.
+    $ ./entab 
+    this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
+    this      line has      lots of spaces and      tabs   but the output have      only the minimum tab    necessary.
+
+Notes:
+
+    * The first string in ``argv`` is the name of the
+      executable file used to run the program. Thus by compiling the 
+      program with 2 different names *entab* and *detab* we can have
+      different behaviour.
+
+.. note:: 
+
+    From this exercise onwards, we are going to give a proper name
+    to the executable file when compiling (instead of leaving the
+    default *a.out*) 
+
+Exercise 5-13
+-------------
+*main.c*
+
+.. literalinclude:: ../../solutions/chapter_5/exercise-5_13/main.c
+    :language: c
+    :tab-width: 4
+
+Compilation and run:
+
+.. code-block:: console
+
+    $ gcc -o tail main.c
+    $ ./tail -3
+    0
+    1
+    2
+    3
+    4
+
+    2
+    3
+    4
+
+Notes:
+
+    * We make use of ``geline`` from standard library, 
+      check :ref:`exercise-1_17` for idiomatic way to call the 
+      function. In this case we make use of ``getline`` to fill
+      an array of lines. To fully understand this function we
+      still need to know dynamic memory allocation which is explained
+      at the end of :ref:`chapter-6`. 
+    * Notice that we use variable-length arrays, since the length
+      of both ``lines_ptrs`` and ``lines_n`` arrays is unknown at
+      compile time (only at run time). 
+      This feature is from C99 onwards.
 
 Rest of exercises
 -----------------
-
 The documentation is not complete, but the solution
 code of the rest of the exercises can be consulted here:
 

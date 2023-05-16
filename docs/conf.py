@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'README'
-copyright = 'Copyright 2023 Mr-Io'
-author = 'Mr-Io'
+copyright = 'Copyright 2023 Mario Rigaud'
+author = 'Mario Rigaud'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
